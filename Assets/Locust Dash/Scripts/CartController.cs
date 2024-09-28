@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CartController : MonoBehaviour
 {
-    public float forwardSpeed = 5f;     // Constant forward movement speed
+    public float forwardSpeed = 1f;     // Constant forward movement speed
     public float turnSpeed = 5f;        // Speed for horizontal movement
     public float leftBound = -3f;       // Left boundary for movement
     public float rightBound = 3f;       // Right boundary for movement
@@ -60,6 +60,20 @@ public class CartController : MonoBehaviour
             // Return to neutral rotation when not moving
             Quaternion neutralRotation = Quaternion.Euler(0, 0, 0);
             transform.rotation = Quaternion.Lerp(transform.rotation, neutralRotation, Time.deltaTime * tiltSpeed);
+        }
+    }
+
+    void OnCollisionEnter(Collision col) {
+        Debug.Log("Hit object");
+        if (col.gameObject.tag == "LocustBall") {
+            Counter.collision++;
+            Debug.Log("Collision detected with ball");
+             Destroy(col.gameObject);
+        }
+        if (col.gameObject.tag == "Locust_Coin") {
+            Counter.coins++;
+            Debug.Log("Collision detected with coin");
+             Destroy(col.gameObject);
         }
     }
 }

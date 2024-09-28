@@ -9,9 +9,9 @@ public class SpawnCoins : MonoBehaviour
 
     public UI uI;
     public GameObject cart;
-    private float spawnInterval = 10.0f;
-    public int deltaX = 10;
-    public int deltaZ = 10;
+    private float spawnInterval = 200.0f;
+    public float deltaX = 3f;
+    public float deltaZ = 3f;
 
     Quaternion rotation = Quaternion.Euler(90, 0, 0);
 
@@ -35,8 +35,8 @@ public class SpawnCoins : MonoBehaviour
             Debug.Log("Coin spawn");
             Vector3 spawnPosition = cart.transform.position + cart.transform.forward * 5;
 
-            spawnPosition.x += Random.Range(-deltaX, deltaX);
-            spawnPosition.z += Random.Range(-deltaZ, deltaZ);
+            spawnPosition.x += Random.Range(-deltaX / 2, deltaX / 2);
+            spawnPosition.z += Random.Range(0, deltaZ);
             spawnPosition.y = -0.5f;
 
             Instantiate(coinPrefab, spawnPosition, rotation);
@@ -45,10 +45,4 @@ public class SpawnCoins : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision collision) {
-        if (collision.gameObject == cart) {
-            Destroy(gameObject);
-            uI.updateCounter();
-        }
-    }
 }

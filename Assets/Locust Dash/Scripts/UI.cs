@@ -8,17 +8,17 @@ public class UI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        coinCounter();
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        coinCounter();
     }
 
-     public void updateCounter() {
-        Counter.coins ++;
+     public void coinCounter() {
         scoreText.text = "Coins: " + Counter.coins.ToString();
     }
+
 }

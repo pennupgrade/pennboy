@@ -6,13 +6,13 @@ public class SpawnBalls : MonoBehaviour
 {
     public GameObject ballPrefab;  // The ball prefab to spawn
     private GameObject currentBall;  // The reference to the current spawned ball
-    private float spawnInterval = 2.5f;  // Time interval between spawns
+    private float spawnInterval = 100.0f;  // Time interval between spawns
     private Coroutine spawnCoroutine;
 
     public GameObject cart;
-    public Vector3 spawnPosition = new Vector3(0, 10, 0);
-    public int deltaX = 10;
-    public int deltaZ = 10;
+    public Vector3 spawnPosition = Vector3.zero;
+    public float deltaX = 3f;
+    public float deltaZ = 3f;
 
     void Start()
     {
@@ -32,22 +32,19 @@ public class SpawnBalls : MonoBehaviour
                 // Debug.Log("Destroying ball: " + currentBall.name);
                 // Destroy(currentBall);
             }
+            spawnPosition = cart.transform.position + cart.transform.forward * 5;
 
-            Vector3 newPos = new Vector3(spawnPosition.x + Random.Range(-deltaX, deltaX), 10, spawnPosition.z + Random.Range(0,deltaZ));
+            spawnPosition.x += Random.Range(-deltaX / 2, deltaX / 2);
+            spawnPosition.z += Random.Range(0, deltaZ);
+            spawnPosition.y = 10;
 
 
-            currentBall = Instantiate(ballPrefab, newPos, Quaternion.identity);
-            Debug.Log("Spawned new ball: " + currentBall.name + spawnPosition.ToString());
+            currentBall = Instantiate(ballPrefab, spawnPosition, Quaternion.identity);
+            // Debug.Log("Spawned new ball: " + currentBall.name + spawnPosition.ToString());
             // Destroy(currentBall ,n );
 
             yield return new WaitForSeconds(spawnInterval);
         }
     }
-    void OnCollisionEnter(Collision col) {
-        if (col.gameObject == cart) {
-            Counter.collision++;
-            Debug.Log("Collision detected with ball");
-             Destroy(currentBall);
-        }
-    }
+    
 }
