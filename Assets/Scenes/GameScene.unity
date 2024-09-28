@@ -399,6 +399,8 @@ MonoBehaviour:
   offset: {x: 0, y: 1.75, z: -3.75}
   leftBound: -3
   rightBound: 3
+  leftBound: -8
+  rightBound: 8
 --- !u!114 &146851214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -922,6 +924,7 @@ GameObject:
   - component: {fileID: 1665659925}
   - component: {fileID: 1665659924}
   - component: {fileID: 1665659923}
+  - component: {fileID: 1665659926}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -1023,12 +1026,30 @@ Transform:
   m_GameObject: {fileID: 1665659922}
   serializedVersion: 2
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: 0.42261827, y: 0, z: 0, w: 0.9063079}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 50, y: 0, z: 0}
+--- !u!114 &1665659926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665659922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fad3ef8a0c464f44a9d3fa7c43cf47e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cart: {fileID: 1009717038}
+  smoothSpeed: 0.125
+  leftBound: -8
+  rightBound: 8
 --- !u!1 &2121767072
 GameObject:
   m_ObjectHideFlags: 0
@@ -1070,8 +1091,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 878317592990398965, guid: d6da878f650e641bc94861f5d3c48d36,
         type: 3}
+<<<<<<< HEAD
       propertyPath: forwardSpeed
       value: 1
+=======
+      propertyPath: leftBound
+      value: -8
+      objectReference: {fileID: 0}
+    - target: {fileID: 878317592990398965, guid: d6da878f650e641bc94861f5d3c48d36,
+        type: 3}
+      propertyPath: rightBound
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 878317592990398965, guid: d6da878f650e641bc94861f5d3c48d36,
+        type: 3}
+      propertyPath: forwardSpeed
+      value: 0.5
+>>>>>>> cec62ba471b163d28e42db2a6ae5a625eb4a8991
       objectReference: {fileID: 0}
     - target: {fileID: 1447769856848296981, guid: d6da878f650e641bc94861f5d3c48d36,
         type: 3}
