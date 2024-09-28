@@ -1092,10 +1092,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 878317592990398965, guid: d6da878f650e641bc94861f5d3c48d36,
         type: 3}
-<<<<<<< HEAD
-      propertyPath: forwardSpeed
-      value: 1
-=======
       propertyPath: leftBound
       value: -8
       objectReference: {fileID: 0}
@@ -1108,7 +1104,6 @@ PrefabInstance:
         type: 3}
       propertyPath: forwardSpeed
       value: 0.5
->>>>>>> cec62ba471b163d28e42db2a6ae5a625eb4a8991
       objectReference: {fileID: 0}
     - target: {fileID: 1447769856848296981, guid: d6da878f650e641bc94861f5d3c48d36,
         type: 3}
