@@ -4,43 +4,62 @@ using UnityEngine;
 
 public class CartController : MonoBehaviour
 {
-    public float speed = 5f;
-    public float leftBound = -3f;  // Adjust as needed
-    public float rightBound = 3f;  // Adjust as needed
-    public float tiltAngle = 15f;   // Angle to tilt the cart
+    public float forwardSpeed = 5f;     // Constant forward movement speed
+    public float turnSpeed = 5f;        // Speed for horizontal movement
+    public float leftBound = -3f;       // Left boundary for movement
+    public float rightBound = 3f;       // Right boundary for movement
+    public float tiltAngle = 15f;       // Angle to tilt the cart
+    public float tiltSpeed = 5f;        // Speed at which the cart tilts
 
-    private float currentPosition;
-    private Vector3 targetPosition;
+    private Vector3 targetPosition;     // Desired position to move towards
+    private float horizontalVelocity;   // Tracks the movement speed horizontally
 
     void Start()
     {
-        currentPosition = transform.position.x;  // Initialize position
         targetPosition = transform.position; // Initialize targetPosition
     }
 
     void Update()
     {
-        float moveInput = Input.GetAxis("Horizontal");
-        targetPosition.x += moveInput * speed * Time.deltaTime;
+        HandleMovement();
+        HandleTilting();
+    }
 
-        // Clamp the target position
+    void HandleMovement()
+    {
+        // Get input for left/right movement
+        float moveInput = Input.GetAxis("Horizontal");
+
+        // Calculate the horizontal movement based on input
+        horizontalVelocity = moveInput * turnSpeed;
+
+        // Adjust the target position based on input
+        targetPosition.x += horizontalVelocity * Time.deltaTime;
+
+        // Clamp the target position to stay within boundaries
         targetPosition.x = Mathf.Clamp(targetPosition.x, leftBound, rightBound);
 
-        // Smoothly move to the target position
-        transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * 10f);
+        // Apply forward movement
+        targetPosition.z += forwardSpeed * Time.deltaTime;
 
-        // Calculate and apply tilt based on input
-        if (moveInput != 0)
+        // Smoothly move towards the target position
+        transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * 10f);
+    }
+
+    void HandleTilting()
+    {
+        // If moving, tilt based on the direction
+        if (Mathf.Abs(horizontalVelocity) > 0.1f)
         {
-            float tiltDirection = moveInput > 0 ? -tiltAngle : tiltAngle; // Determine tilt direction
+            float tiltDirection = horizontalVelocity > 0 ? -tiltAngle : tiltAngle; // Determine tilt direction
             Quaternion targetRotation = Quaternion.Euler(0, 0, tiltDirection);
-            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 5f); // Smooth rotation
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * tiltSpeed);
         }
         else
         {
-            // Return to neutral position when not moving
+            // Return to neutral rotation when not moving
             Quaternion neutralRotation = Quaternion.Euler(0, 0, 0);
-            transform.rotation = Quaternion.Lerp(transform.rotation, neutralRotation, Time.deltaTime * 5f);
+            transform.rotation = Quaternion.Lerp(transform.rotation, neutralRotation, Time.deltaTime * tiltSpeed);
         }
     }
 }
