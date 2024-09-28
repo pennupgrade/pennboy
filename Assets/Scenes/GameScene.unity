@@ -397,8 +397,8 @@ MonoBehaviour:
   cart: {fileID: 1009717038}
   smoothSpeed: 0.125
   offset: {x: 0, y: 1.75, z: -3.75}
-  leftBound: -3
-  rightBound: 3
+  leftBound: -8
+  rightBound: 8
 --- !u!114 &146851214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -953,8 +953,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cart: {fileID: 1009717038}
   smoothSpeed: 0.125
-  leftBound: -3
-  rightBound: 3
+  leftBound: -8
+  rightBound: 8
 --- !u!1 &2121767072
 GameObject:
   m_ObjectHideFlags: 0
@@ -994,6 +994,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 878317592990398965, guid: d6da878f650e641bc94861f5d3c48d36,
+        type: 3}
+      propertyPath: leftBound
+      value: -8
+      objectReference: {fileID: 0}
+    - target: {fileID: 878317592990398965, guid: d6da878f650e641bc94861f5d3c48d36,
+        type: 3}
+      propertyPath: rightBound
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 878317592990398965, guid: d6da878f650e641bc94861f5d3c48d36,
         type: 3}
       propertyPath: forwardSpeed
