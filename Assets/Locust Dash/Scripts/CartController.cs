@@ -12,10 +12,38 @@ public class CartController : MonoBehaviour
     private float tiltSpeed = 5f;        // Speed at which the cart tilts
     private Vector3 targetPosition;     // Desired position to move towards
     private float horizontalVelocity;   // Tracks the movement speed horizontally
+    public Transform[] waypoints;   // Reference to waypoints
+    private int currWaypointIndex = 1;  // Index of curr waypoint
 
     void Start()
     {
-        targetPosition = transform.position; // Initialize targetPosition
+        targetPosition = transform.position;
+        MoveToWaypoint(currWaypointIndex); // Initialize targetPosition
+    }
+
+    public void MoveToWaypoint(int index) 
+    {
+        if (index < 0 || index >= waypoints.Length) 
+        {
+            Debug.LogError("Invalid waypoint index.");
+            return;
+        }
+
+        // Move cart to specified waypoint
+        transform.position = waypoints[index].position;
+        transform.rotation = waypoints[index].rotation;
+        currWaypointIndex = index;  // update curr index
+    }
+
+    // Method to handle level selection from UI
+    public void OnLevelSelected(int levelIndex)
+    {
+        MoveToWaypoint(levelIndex);
+    }
+
+    public void ResetCart() 
+    {
+        transform.position = Vector3.zero;
     }
 
     void Update()
@@ -42,7 +70,7 @@ public class CartController : MonoBehaviour
         targetPosition.x = Mathf.Clamp(targetPosition.x, leftBound, rightBound);
 
         // Apply forward movement
-        targetPosition.z += forwardSpeed * Time.deltaTime;
+        targetPosition.z += transform.position.z + forwardSpeed * Time.deltaTime;
 
         // Smoothly move towards the target position
         transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * 10f);
