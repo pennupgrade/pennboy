@@ -9,6 +9,8 @@ public class UI : MonoBehaviour
 
      public GameObject winningCanvas;
 
+     public GameObject losingCanvas;
+
      public GameObject play;
      public TMP_Text text;
     // Start is called before the first frame update
@@ -37,6 +39,12 @@ public class UI : MonoBehaviour
         winningCanvas.SetActive(true);
         Time.timeScale = 0f;
 
+    }
+
+    public void lose() {
+        play.SetActive(false);
+        losingCanvas.SetActive(false);
+        Time.timeScale = 0f;
     }
 
 }
