@@ -19,6 +19,7 @@ public class IntroManager : MonoBehaviour
     public GameObject logoSequence;
     public GameObject upgradeLogo;
     public List<GameObject> letters;
+    public List<Image> stars;
 
     private bool polling;
     private (RectTransform rectTransform, Image image) bgAttrs;
@@ -134,12 +135,17 @@ public class IntroManager : MonoBehaviour
 
         // Animate PennBoy logo upwards, letter by letter, fading in
         yield return StartCoroutine(RevealPennBoyLetters(letterAttrs));
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.5f);
 
         foreach (var (_, _, image) in letterAttrs) {
             StartCoroutine(PulsePennBoyLetterColor(image));
-
             yield return new WaitForSeconds(0.1f);
+        }
+
+        foreach (var star in stars) {
+            StartCoroutine(ScaleStars(star));
+            StartCoroutine(RotateStars(star));
+            yield return new WaitForSeconds(0.2f);
         }
 
         // Fade and translate in UPGRADE logo
@@ -153,6 +159,23 @@ public class IntroManager : MonoBehaviour
         yield return Anim.Animate(0.5f, t => {
             logoAttrs.canvasGroup.alpha = t;
         });
+    }
+
+    private IEnumerator ScaleStars(Image star) {
+        yield return Anim.Animate(0.5f, t => {
+            star.rectTransform.localScale = Vector3.Lerp(Vector3.zero, Vector3.one, t);
+        });
+
+        yield return Anim.Animate(0.5f, t => {
+            star.rectTransform.localScale = Vector3.Lerp(Vector3.one, Vector3.zero, t);
+        });
+    }
+
+    private IEnumerator RotateStars(Image star) {
+        for (var i = 1; i <= 360; ++i) {
+            star.rectTransform.Rotate(0f, 0f, 1f);
+            yield return null;
+        }
     }
 
     private IEnumerator PulsePennBoyLetterColor(Image image) {
