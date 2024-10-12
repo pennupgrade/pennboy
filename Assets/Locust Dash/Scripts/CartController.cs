@@ -15,8 +15,11 @@ public class CartController : MonoBehaviour
     public Transform[] waypoints;   // Reference to waypoints
     private int currWaypointIndex = 1;  // Index of curr waypoint
 
+    private UI uI;
+
     void Start()
     {
+<<<<<<< HEAD
         targetPosition = transform.position;
         MoveToWaypoint(currWaypointIndex); // Initialize targetPosition
     }
@@ -44,6 +47,18 @@ public class CartController : MonoBehaviour
     public void ResetCart() 
     {
         transform.position = Vector3.zero;
+=======
+        targetPosition = transform.position; // Initialize targetPosition
+
+        // Find the UI component in the scene
+        uI = FindObjectOfType<UI>();
+
+        // Check if uI is assigned correctly
+        if (uI == null)
+        {
+            Debug.LogError("UI component not found in the scene. Make sure a GameObject with the UI script is present.");
+        }
+>>>>>>> ba5bc6a861974022cb21b087fd4a8d1fe0da6bb6
     }
 
     void Update()
@@ -51,7 +66,20 @@ public class CartController : MonoBehaviour
         HandleMovement();
         HandleTilting();
         if (gameObject.transform.position.z > 5f) {
+        
+        // Update the stage based on the cart's position
+        if (transform.position.z > 5f) 
+        {
             Counter.stage = 2;
+        }
+
+        // Trigger the won method when the cart reaches the specified point
+        if (transform.position.z > 10f) 
+        {
+            if (uI != null)
+            {
+                uI.won();
+            }
         }
     }
 
@@ -94,17 +122,26 @@ public class CartController : MonoBehaviour
     }
 
     void OnCollisionEnter(Collision col) {
+    void OnCollisionEnter(Collision col) 
+    {
         Debug.Log("Hit object");
         if (col.gameObject.tag == "LocustBall") {
+        if (col.gameObject.tag == "LocustBall") 
+        {
             Counter.collision++;
             Debug.Log("Collision detected with ball");
              Destroy(col.gameObject);
              forwardSpeed = 0f;
+            Destroy(col.gameObject);
+            forwardSpeed = 0f;  // Stop the cart when it hits a ball
         }
         if (col.gameObject.tag == "Locust_Coin") {
+        else if (col.gameObject.tag == "Locust_Coin") 
+        {
             Counter.coins++;
             Debug.Log("Collision detected with coin");
              Destroy(col.gameObject);
+            Destroy(col.gameObject);
         }
     }
 }
