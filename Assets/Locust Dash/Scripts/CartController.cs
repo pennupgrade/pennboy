@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CartController : MonoBehaviour
 {
-    private float forwardSpeed = 2f;     // Constant forward movement speed
+    private float forwardSpeed = 3f;     // Constant forward movement speed
     private float turnSpeed = 5f;        // Speed for horizontal movement
     private float leftBound = -8f;       // Left boundary for movement
     private float rightBound = 8f;       // Right boundary for movement

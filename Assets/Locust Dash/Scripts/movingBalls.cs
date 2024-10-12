@@ -25,9 +25,10 @@ public class MovingBalls : MonoBehaviour
     IEnumerator SpawnBalls()
     {
         yield return new WaitForSeconds(spawnInterval);  // Initial delay
-        if (cart.transform.position.z > 7.5f)
+
+        while (true)
         {
-            while (true)
+            if (cart.transform.position.z > 7.5f)
             {
                 // Set spawn position in front of the cart
                 spawnPosition = cart.transform.position + cart.transform.forward * 5;
@@ -42,11 +43,10 @@ public class MovingBalls : MonoBehaviour
 
                 // Start moving the new ball
                 StartCoroutine(MoveBall(newBall));
-
-                yield return new WaitForSeconds(spawnInterval);
             }
-        }
 
+            yield return new WaitForSeconds(spawnInterval);
+        }
     }
 
     IEnumerator MoveBall(GameObject ball)
