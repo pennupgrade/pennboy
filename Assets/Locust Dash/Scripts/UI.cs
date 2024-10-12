@@ -32,7 +32,9 @@ public class UI : MonoBehaviour
     }
 
     public void won() {
-        Time.deltaTime = 0f;
+        winningCanvas.SetActive(true);
+        Time.timeScale = 0f;
+
     }
 
 }
