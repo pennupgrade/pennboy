@@ -18,6 +18,7 @@ public class CartController : MonoBehaviour
     void Start()
     {
         targetPosition = transform.position;
+        uI = FindObjectOfType<UI>();
     }
 
     public void ResetCart() 
@@ -41,13 +42,13 @@ public class CartController : MonoBehaviour
         HandleTilting();
         
         // Update the stage based on the cart's position
-        if (gameObject.transform.position.z > 5f) 
+        if (gameObject.transform.position.z > 25f) 
         {
             Counter.stage = 2;
         }
 
         // Trigger the won method when the cart reaches the specified point
-        if (transform.position.z > 10f) 
+        if (gameObject.transform.position.z > 50f) 
         {
                 uI.won();
             

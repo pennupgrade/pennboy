@@ -35,7 +35,7 @@ public class UI : MonoBehaviour
     }
 
     public void won() {
-        play.SetActive(false);
+        // play.SetActive(false);
         winningCanvas.SetActive(true);
         Time.timeScale = 0f;
 
