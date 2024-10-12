@@ -4,25 +4,55 @@ using UnityEngine;
 
 public class CartController : MonoBehaviour
 {
-    public float forwardSpeed = 1f;     // Constant forward movement speed
-    public float turnSpeed = 5f;        // Speed for horizontal movement
-    public float leftBound = -3f;       // Left boundary for movement
-    public float rightBound = 3f;       // Right boundary for movement
-    public float tiltAngle = 15f;       // Angle to tilt the cart
-    public float tiltSpeed = 5f;        // Speed at which the cart tilts
-
+    private float forwardSpeed = 5f;     // Constant forward movement speed
+    private float turnSpeed = 5f;        // Speed for horizontal movement
+    private float leftBound = -8f;       // Left boundary for movement
+    private float rightBound = 8f;       // Right boundary for movement
+    private float tiltAngle = 15f;       // Angle to tilt the cart
+    private float tiltSpeed = 5f;        // Speed at which the cart tilts
     private Vector3 targetPosition;     // Desired position to move towards
     private float horizontalVelocity;   // Tracks the movement speed horizontally
 
+    private UI uI;
+
     void Start()
     {
+        targetPosition = transform.position;
+        uI = FindObjectOfType<UI>();
+    }
+
+    public void ResetCart() 
+    {
+        transform.position = Vector3.zero;
         targetPosition = transform.position; // Initialize targetPosition
+
+        // Find the UI component in the scene
+        uI = FindObjectOfType<UI>();
+
+        // Check if uI is assigned correctly
+        if (uI == null)
+        {
+            Debug.LogError("UI component not found in the scene. Make sure a GameObject with the UI script is present.");
+        }
     }
 
     void Update()
     {
         HandleMovement();
         HandleTilting();
+        
+        // Update the stage based on the cart's position
+        if (gameObject.transform.position.z > 25f) 
+        {
+            Counter.stage = 2;
+        }
+
+        // Trigger the won method when the cart reaches the specified point
+        if (gameObject.transform.position.z > 50f) 
+        {
+                uI.won();
+            
+        }
     }
 
     void HandleMovement()
@@ -66,17 +96,21 @@ public class CartController : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision col) {
+    void OnCollisionEnter(Collision col) 
+    {
         Debug.Log("Hit object");
-        if (col.gameObject.tag == "LocustBall") {
+        if (col.gameObject.tag == "LocustBall") 
+        {
             Counter.collision++;
             Debug.Log("Collision detected with ball");
-             Destroy(col.gameObject);
+            Destroy(col.gameObject);
+            forwardSpeed = 0f;  // Stop the cart when it hits a ball
         }
-        if (col.gameObject.tag == "Locust_Coin") {
+        else if (col.gameObject.tag == "Locust_Coin") 
+        {
             Counter.coins++;
             Debug.Log("Collision detected with coin");
-             Destroy(col.gameObject);
+            Destroy(col.gameObject);
         }
     }
 }
