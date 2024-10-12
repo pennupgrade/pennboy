@@ -19,7 +19,6 @@ public class CartController : MonoBehaviour
 
     void Start()
     {
-<<<<<<< HEAD
         targetPosition = transform.position;
         MoveToWaypoint(currWaypointIndex); // Initialize targetPosition
     }
@@ -47,7 +46,6 @@ public class CartController : MonoBehaviour
     public void ResetCart() 
     {
         transform.position = Vector3.zero;
-=======
         targetPosition = transform.position; // Initialize targetPosition
 
         // Find the UI component in the scene
@@ -58,7 +56,6 @@ public class CartController : MonoBehaviour
         {
             Debug.LogError("UI component not found in the scene. Make sure a GameObject with the UI script is present.");
         }
->>>>>>> ba5bc6a861974022cb21b087fd4a8d1fe0da6bb6
     }
 
     void Update()
