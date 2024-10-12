@@ -5,6 +5,10 @@ using TMPro;
 public class UI : MonoBehaviour
 {
      public TMP_Text scoreText;
+
+     public GameObject cart;
+
+     public GameObject winningCanvas;
      public TMP_Text text;
     // Start is called before the first frame update
     void Start()
@@ -25,6 +29,10 @@ public class UI : MonoBehaviour
 
     public void stageText() {
         text.text = "Stage: " + Counter.stage.ToString();
+    }
+
+    public void won() {
+        Time.deltaTime = 0f;
     }
 
 }
