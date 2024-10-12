@@ -22,6 +22,9 @@ public class CartController : MonoBehaviour
     {
         HandleMovement();
         HandleTilting();
+        if (gameObject.transform.position.z > 5f) {
+            Counter.stage = 2;
+        }
     }
 
     void HandleMovement()
