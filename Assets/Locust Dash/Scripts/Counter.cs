@@ -7,4 +7,6 @@ public class Counter : MonoBehaviour
     // Start is called before the first frame update
     public static int coins;
     public static int collision;
+
+    public static int stage = 1;
 }
