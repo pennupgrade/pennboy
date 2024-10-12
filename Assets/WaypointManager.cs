@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WaypointManager : MonoBehaviour
 {
-    public Transform[] waypoints; // Array to hold references to waypoints
+    public Transform[] waypoints = new Transform[2]; // Array to hold references to waypoints
 
     void Start()
     {

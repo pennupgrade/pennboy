@@ -23,7 +23,7 @@ public class CartSpawner : MonoBehaviour
     {
         if (index < 0 || index >= waypoints.Length)
         {
-            Debug.LogError("Invalid waypoint index.");
+            Debug.LogError("Invalid waypoint index." + index);
             return;
         }
 

@@ -12,35 +12,12 @@ public class CartController : MonoBehaviour
     private float tiltSpeed = 5f;        // Speed at which the cart tilts
     private Vector3 targetPosition;     // Desired position to move towards
     private float horizontalVelocity;   // Tracks the movement speed horizontally
-    public Transform[] waypoints;   // Reference to waypoints
-    private int currWaypointIndex = 1;  // Index of curr waypoint
 
     private UI uI;
 
     void Start()
     {
         targetPosition = transform.position;
-        MoveToWaypoint(currWaypointIndex); // Initialize targetPosition
-    }
-
-    public void MoveToWaypoint(int index) 
-    {
-        if (index < 0 || index >= waypoints.Length) 
-        {
-            Debug.LogError("Invalid waypoint index.");
-            return;
-        }
-
-        // Move cart to specified waypoint
-        transform.position = waypoints[index].position;
-        transform.rotation = waypoints[index].rotation;
-        currWaypointIndex = index;  // update curr index
-    }
-
-    // Method to handle level selection from UI
-    public void OnLevelSelected(int levelIndex)
-    {
-        MoveToWaypoint(levelIndex);
     }
 
     public void ResetCart() 
@@ -64,7 +41,7 @@ public class CartController : MonoBehaviour
         HandleTilting();
         
         // Update the stage based on the cart's position
-        if (transform.position.z > 5f) 
+        if (gameObject.transform.position.z > 5f) 
         {
             Counter.stage = 2;
         }
@@ -72,10 +49,8 @@ public class CartController : MonoBehaviour
         // Trigger the won method when the cart reaches the specified point
         if (transform.position.z > 10f) 
         {
-            if (uI != null)
-            {
                 uI.won();
-            }
+            
         }
     }
 
