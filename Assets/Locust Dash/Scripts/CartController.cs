@@ -52,13 +52,16 @@ public class CartController : MonoBehaviour
         if (Mathf.Abs(horizontalVelocity) > 0.1f)
         {
             float tiltDirection = horizontalVelocity > 0 ? -tiltAngle : tiltAngle; // Determine tilt direction
-            Quaternion targetRotation = Quaternion.Euler(0, 0, tiltDirection);
+
+            Quaternion targetRotation = targetRotation = Quaternion.Euler(0, -90, 0);
+            targetRotation = Quaternion.Euler(0, 0, tiltDirection) * targetRotation;
+
             transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * tiltSpeed);
         }
         else
         {
             // Return to neutral rotation when not moving
-            Quaternion neutralRotation = Quaternion.Euler(0, 0, 0);
+            Quaternion neutralRotation = Quaternion.Euler(0, -90, 0);
             transform.rotation = Quaternion.Lerp(transform.rotation, neutralRotation, Time.deltaTime * tiltSpeed);
         }
     }
