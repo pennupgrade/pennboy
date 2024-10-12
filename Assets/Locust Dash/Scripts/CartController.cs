@@ -13,17 +13,40 @@ public class CartController : MonoBehaviour
     private Vector3 targetPosition;     // Desired position to move towards
     private float horizontalVelocity;   // Tracks the movement speed horizontally
 
+    private UI uI;
+
     void Start()
     {
         targetPosition = transform.position; // Initialize targetPosition
+
+        // Find the UI component in the scene
+        uI = FindObjectOfType<UI>();
+
+        // Check if uI is assigned correctly
+        if (uI == null)
+        {
+            Debug.LogError("UI component not found in the scene. Make sure a GameObject with the UI script is present.");
+        }
     }
 
     void Update()
     {
         HandleMovement();
         HandleTilting();
-        if (gameObject.transform.position.z > 5f) {
+        
+        // Update the stage based on the cart's position
+        if (transform.position.z > 5f) 
+        {
             Counter.stage = 2;
+        }
+
+        // Trigger the won method when the cart reaches the specified point
+        if (transform.position.z > 10f) 
+        {
+            if (uI != null)
+            {
+                uI.won();
+            }
         }
     }
 
@@ -65,18 +88,21 @@ public class CartController : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision col) {
+    void OnCollisionEnter(Collision col) 
+    {
         Debug.Log("Hit object");
-        if (col.gameObject.tag == "LocustBall") {
+        if (col.gameObject.tag == "LocustBall") 
+        {
             Counter.collision++;
             Debug.Log("Collision detected with ball");
-             Destroy(col.gameObject);
-             forwardSpeed = 0f;
+            Destroy(col.gameObject);
+            forwardSpeed = 0f;  // Stop the cart when it hits a ball
         }
-        if (col.gameObject.tag == "Locust_Coin") {
+        else if (col.gameObject.tag == "Locust_Coin") 
+        {
             Counter.coins++;
             Debug.Log("Collision detected with coin");
-             Destroy(col.gameObject);
+            Destroy(col.gameObject);
         }
     }
 }
