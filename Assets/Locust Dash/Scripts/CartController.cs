@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class CartController : MonoBehaviour
 {
-    public float forwardSpeed = 1f;     // Constant forward movement speed
-    public float turnSpeed = 5f;        // Speed for horizontal movement
-    public float leftBound = -3f;       // Left boundary for movement
-    public float rightBound = 3f;       // Right boundary for movement
-    public float tiltAngle = 15f;       // Angle to tilt the cart
-    public float tiltSpeed = 5f;        // Speed at which the cart tilts
-
+    private float forwardSpeed = 2f;     // Constant forward movement speed
+    private float turnSpeed = 5f;        // Speed for horizontal movement
+    private float leftBound = -8f;       // Left boundary for movement
+    private float rightBound = 8f;       // Right boundary for movement
+    private float tiltAngle = 15f;       // Angle to tilt the cart
+    private float tiltSpeed = 5f;        // Speed at which the cart tilts
     private Vector3 targetPosition;     // Desired position to move towards
     private float horizontalVelocity;   // Tracks the movement speed horizontally
 
@@ -69,6 +68,7 @@ public class CartController : MonoBehaviour
             Counter.collision++;
             Debug.Log("Collision detected with ball");
              Destroy(col.gameObject);
+             forwardSpeed = 0f;
         }
         if (col.gameObject.tag == "Locust_Coin") {
             Counter.coins++;

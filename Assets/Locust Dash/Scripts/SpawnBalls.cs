@@ -6,7 +6,7 @@ public class SpawnBalls : MonoBehaviour
 {
     public GameObject ballPrefab;  // The ball prefab to spawn
     private GameObject currentBall;  // The reference to the current spawned ball
-    private float spawnInterval = 100.0f;  // Time interval between spawns
+    private float spawnInterval = 4.0f;  // Time interval between spawns
     private Coroutine spawnCoroutine;
 
     public GameObject cart;

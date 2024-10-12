@@ -4,11 +4,10 @@ using UnityEngine;
 public class MovingBalls : MonoBehaviour
 {
     public GameObject ballPrefab;  // The ball prefab to spawn
-    private GameObject currentBall;  // The reference to the current spawned ball
-    private float spawnInterval = 1.0f;  // Time interval between spawns
+    private float spawnInterval = 4.0f;  // Time interval between spawns
     private Coroutine spawnCoroutine;
 
-    private float xVel = 0.05f;  // Speed at which the ball moves along the x-axis
+    private float xVel = 0.01f;  // Speed at which each ball moves along the x-axis
 
     public GameObject cart;
     public Vector3 spawnPosition = Vector3.zero;
@@ -19,52 +18,54 @@ public class MovingBalls : MonoBehaviour
     {
         if (spawnCoroutine == null)
         {
-            spawnCoroutine = StartCoroutine(SpawnAndDestroyBall());
+            spawnCoroutine = StartCoroutine(SpawnBalls());
         }
     }
 
-    IEnumerator SpawnAndDestroyBall()
+    IEnumerator SpawnBalls()
     {
         yield return new WaitForSeconds(spawnInterval);  // Initial delay
-        while (true)
+        if (cart.transform.position.z > 7.5f)
         {
-            if (currentBall != null)
+            while (true)
             {
-                Destroy(currentBall);  // Destroy the previous ball if needed
+                // Set spawn position in front of the cart
+                spawnPosition = cart.transform.position + cart.transform.forward * 5;
+
+                // Add randomness to x and z
+                spawnPosition.x += Random.Range(-deltaX / 2, deltaX / 2);
+                spawnPosition.z += Random.Range(deltaZ / 2, 2 * deltaZ);
+                spawnPosition.y = -0.5f;
+
+                // Spawn a new ball
+                GameObject newBall = Instantiate(ballPrefab, spawnPosition, Quaternion.identity);
+
+                // Start moving the new ball
+                StartCoroutine(MoveBall(newBall));
+
+                yield return new WaitForSeconds(spawnInterval);
             }
-
-            // Set spawn position in front of the cart
-            spawnPosition = cart.transform.position + cart.transform.forward * 5;
-
-            // Add randomness to x and z
-            spawnPosition.x += Random.Range(-deltaX / 2, deltaX / 2);
-            spawnPosition.z += Random.Range(0, 2 * deltaZ);
-            spawnPosition.y = -0.5f;
-
-            // Spawn the ball
-            currentBall = Instantiate(ballPrefab, spawnPosition, Quaternion.identity);
-
-            // Start moving the ball
-            StartCoroutine(MoveBall(currentBall));
-
-            yield return new WaitForSeconds(spawnInterval);
         }
+
     }
 
     IEnumerator MoveBall(GameObject ball)
     {
+        float ballXVel = xVel;  // Each ball gets its own x velocity
+
         while (ball != null)  // Continue moving while the ball exists
         {
             // Move the ball along the x-axis
             Vector3 newPosition = ball.transform.position;
-            newPosition.x += xVel;  
+            newPosition.x += ballXVel;
 
             // Update the ball's position
             ball.transform.position = newPosition;
 
+            // Reverse direction if it hits the boundary
             if (ball.transform.position.x >= 8f || ball.transform.position.x <= -8f)
             {
-                xVel = -xVel;
+                ballXVel = -ballXVel;
             }
 
             yield return null;  // Wait for the next frame
