@@ -94,7 +94,7 @@ public class CartController : MonoBehaviour
         targetPosition.x = Mathf.Clamp(targetPosition.x, leftBound, rightBound);
 
         // Apply forward movement
-        targetPosition.z += transform.position.z + forwardSpeed * Time.deltaTime;
+        targetPosition.z += forwardSpeed * Time.deltaTime;
 
         // Smoothly move towards the target position
         transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * 10f);
