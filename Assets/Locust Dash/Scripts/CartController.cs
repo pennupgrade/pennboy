@@ -65,7 +65,6 @@ public class CartController : MonoBehaviour
     {
         HandleMovement();
         HandleTilting();
-        if (gameObject.transform.position.z > 5f) {
         
         // Update the stage based on the cart's position
         if (transform.position.z > 5f) 
@@ -121,26 +120,20 @@ public class CartController : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision col) {
     void OnCollisionEnter(Collision col) 
     {
         Debug.Log("Hit object");
-        if (col.gameObject.tag == "LocustBall") {
         if (col.gameObject.tag == "LocustBall") 
         {
             Counter.collision++;
             Debug.Log("Collision detected with ball");
-             Destroy(col.gameObject);
-             forwardSpeed = 0f;
             Destroy(col.gameObject);
             forwardSpeed = 0f;  // Stop the cart when it hits a ball
         }
-        if (col.gameObject.tag == "Locust_Coin") {
         else if (col.gameObject.tag == "Locust_Coin") 
         {
             Counter.coins++;
             Debug.Log("Collision detected with coin");
-             Destroy(col.gameObject);
             Destroy(col.gameObject);
         }
     }

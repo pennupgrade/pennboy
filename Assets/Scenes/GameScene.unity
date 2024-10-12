@@ -425,11 +425,11 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 61037391}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 691389896}
   m_Father: {fileID: 32402247}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -457,11 +457,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Coins
   m_text: COINS
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontAsset: {fileID: 11400000, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
   m_sharedMaterial: {fileID: 2140474, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
   m_fontSharedMaterials: []
@@ -1302,7 +1299,6 @@ MonoBehaviour:
   spawnPosition: {x: 0, y: 10, z: 0}
   deltaX: 10
   deltaZ: 10
---- !u!1 &1665659922
 <<<<<<< HEAD
 =======
 --- !u!1 &1508053687
@@ -1313,12 +1309,6 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1665659925}
-  - component: {fileID: 1665659924}
-  - component: {fileID: 1665659923}
-  - component: {fileID: 1665659926}
-  m_Layer: 0
-  m_Name: Directional Light
   - component: {fileID: 1508053690}
   - component: {fileID: 1508053689}
   - component: {fileID: 1508053688}
