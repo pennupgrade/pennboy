@@ -117,11 +117,11 @@ public class IntroManager : MonoBehaviour
         });
 
         // Zoom out background
-        var initScale = bgAttrs.rectTransform.localScale;
-        var finalScale = new Vector3(1.5f, 1.5f, 1.5f);
+        var initBgScale = bgAttrs.rectTransform.localScale;
+        var finalBgScale = new Vector3(1.5f, 1.5f, 1.5f);
         StartCoroutine(Anim.Animate(0.7f, t => {
             var newT = Easing.EaseInOutQuint(t);
-            bgAttrs.rectTransform.localScale = Vector3.Lerp(initScale, finalScale, newT);
+            bgAttrs.rectTransform.localScale = Vector3.Lerp(initBgScale, finalBgScale, newT);
         }));
 
         // Fade background to Up[0]
@@ -147,6 +147,14 @@ public class IntroManager : MonoBehaviour
             StartCoroutine(RotateStars(star));
             yield return new WaitForSeconds(0.2f);
         }
+
+        // Zoom in background
+        initBgScale = bgAttrs.rectTransform.localScale;
+        finalBgScale = new Vector3(2.0f, 2.0f, 2.0f);
+        StartCoroutine(Anim.Animate(0.45f, t => {
+            var newT = Easing.EaseInOutQuint(t);
+            bgAttrs.rectTransform.localScale = Vector3.Lerp(initBgScale, finalBgScale, newT);
+        }));
 
         // Fade and translate in UPGRADE logo
         var initLogoPos = logoAttrs.rectTransform.anchoredPosition;
