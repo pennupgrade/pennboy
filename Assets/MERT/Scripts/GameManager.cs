@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +13,13 @@ public class GameManager : MonoBehaviour
     public bool HasPassenger { get; set; } = false;
     private int score = 0;
     public float timeRemaining = 120f; // 2 min
+
+    [SerializeField] TextMeshProUGUI TimerTxt;
+
+    public GameManager(TextMeshProUGUI timerTxt)
+    {
+        TimerTxt = timerTxt;
+    }
 
     public int Score
     {
@@ -47,6 +56,10 @@ public class GameManager : MonoBehaviour
         if (timeRemaining > 0)
         {
             timeRemaining -= Time.deltaTime;
+            float minutes = Mathf.FloorToInt(timeRemaining / 60);
+            float seconds = Mathf.FloorToInt(timeRemaining % 60);
+
+            TimerTxt.text = string.Format("{0:00} : {1:00}", minutes, seconds);
         }
         else
         {

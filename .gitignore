@@ -70,3 +70,64 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+.DS_Store
+Assets/.DS_Store
+Assets/Ambulance.meta
+Assets/Ambulance/Demo.meta
+Assets/Ambulance/Demo/demo.unity
+Assets/Ambulance/Demo/demo.unity.meta
+Assets/Ambulance/Material.meta
+Assets/Ambulance/Material/Ambulance_damage.mat
+Assets/Ambulance/Material/Ambulance_damage.mat.meta
+Assets/Ambulance/Material/Ambulance_no_damage.mat
+Assets/Ambulance/Material/Ambulance_no_damage.mat.meta
+Assets/Ambulance/Material/color.mat
+Assets/Ambulance/Material/color.mat.meta
+Assets/Ambulance/Material/Glass_damage.mat
+Assets/Ambulance/Material/Glass_damage.mat.meta
+Assets/Ambulance/Material/Glass_no_damage.mat
+Assets/Ambulance/Material/Glass_no_damage.mat.meta
+Assets/Ambulance/Material/New Material.mat
+Assets/Ambulance/Material/New Material.mat.meta
+Assets/Ambulance/Model.meta
+Assets/Ambulance/Model/Ambulance.FBX
+Assets/Ambulance/Model/Ambulance.FBX.meta
+Assets/Ambulance/Prefab.meta
+Assets/Ambulance/Prefab/Ambulance_damage.prefab
+Assets/Ambulance/Prefab/Ambulance_damage.prefab.meta
+Assets/Ambulance/Prefab/Ambulance_no_damage.prefab
+Assets/Ambulance/Prefab/Ambulance_no_damage.prefab.meta
+Assets/Ambulance/Textures.meta
+Assets/Ambulance/Textures/damage.meta
+Assets/Ambulance/Textures/damage/ambulance_diffuse_damage.png
+Assets/Ambulance/Textures/damage/ambulance_diffuse_damage.png.meta
+Assets/Ambulance/Textures/damage/ambulance_metallic_damage.png
+Assets/Ambulance/Textures/damage/ambulance_metallic_damage.png.meta
+Assets/Ambulance/Textures/damage/ambulance_normal_damage.png
+Assets/Ambulance/Textures/damage/ambulance_normal_damage.png.meta
+Assets/Ambulance/Textures/damage/glass_damage.png
+Assets/Ambulance/Textures/damage/glass_damage.png.meta
+Assets/Ambulance/Textures/no_damage.meta
+Assets/Ambulance/Textures/no_damage/ambulance_diffuse_no damage.png
+Assets/Ambulance/Textures/no_damage/ambulance_diffuse_no damage.png.meta
+Assets/Ambulance/Textures/no_damage/ambulance_metallic_no damage.png
+Assets/Ambulance/Textures/no_damage/ambulance_metallic_no damage.png.meta
+Assets/Ambulance/Textures/no_damage/ambulance_normal_no damage.png
+Assets/Ambulance/Textures/no_damage/ambulance_normal_no damage.png.meta
+Assets/Ambulance/Textures/no_damage/glass_no_damage.png
+Assets/Ambulance/Textures/no_damage/glass_no_damage.png.meta
+Assets/Ambulance/Textures/Occulsion.meta
+Assets/Ambulance/Textures/Occulsion/ambalance_AO.tga
+Assets/Ambulance/Textures/Occulsion/ambalance_AO.tga.meta
+Assets/Ambulance/Textures/Occulsion/dirt_map.png
+Assets/Ambulance/Textures/Occulsion/dirt_map.png.meta
+Assets/MERT/Scene.meta
+Assets/MERT/Scene.unity
+Assets/MERT/Scene/LightingData.asset
+Assets/MERT/Scene/LightingData.asset.meta
+Assets/MERT/Scene/ReflectionProbe-0.exr
+Assets/MERT/Scene/ReflectionProbe-0.exr.meta
+Assets/Scenes/SampleScene.unity
+Packages/manifest.json
+Packages/packages-lock.json
+ProjectSettings/ProjectVersion.txt
