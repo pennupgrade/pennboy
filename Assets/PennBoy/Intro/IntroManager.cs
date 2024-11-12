@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace PennBoy
@@ -127,7 +130,7 @@ public class IntroManager : MonoBehaviour
         // Fade background to Up[0]
         var initBgCol = bgAttrs.image.color;
         StartCoroutine(Anim.Animate(0.3f, t => {
-            bgAttrs.image.color = Color.Lerp(initBgCol, Theme.Up[0], t);
+            bgAttrs.image.color = Color.Lerp(initBgCol, Theme.Up[10], t);
         }));
 
         healthSafety.SetActive(false);
@@ -167,7 +170,26 @@ public class IntroManager : MonoBehaviour
         yield return Anim.Animate(0.5f, t => {
             logoAttrs.canvasGroup.alpha = t;
         });
+
+        yield return Anim.Animate(1f, t => {
+            float val = Math.Clamp(1-t, 0, 1);
+
+            letterAttrs.ForEach(letter => {
+                letter.canvasGroup.alpha = val;
+            });
+            logoAttrs.canvasGroup.alpha = val;
+        });
+
+        StartCoroutine(LoadNextScene());
+        
     }
+
+    private IEnumerator LoadNextScene() {
+        yield return new WaitForSeconds(1f);
+
+        SceneManager.LoadScene(1);
+    }
+
 
     private IEnumerator ScaleStars(Image star) {
         yield return Anim.Animate(0.5f, t => {
@@ -190,13 +212,13 @@ public class IntroManager : MonoBehaviour
         var initColor = image.color;
 
         yield return Anim.Animate(0.15f, t => {
-            image.color = Color.Lerp(initColor, Theme.Up[5], t);
+            image.color = Color.Lerp(initColor, (Color.white + Theme.Up[4]) / 2, t);
         });
 
         yield return new WaitForSeconds(0.1f);
 
         yield return Anim.Animate(0.15f, t => {
-            image.color = Color.Lerp(Theme.Up[5], initColor, t);
+            image.color = Color.Lerp((Color.white + Theme.Up[4]) / 2, initColor, t);
         });
     }
 
@@ -223,11 +245,11 @@ public class IntroManager : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
 
         // Colors go from 4 -> 5 -> 6 -> 7 -> 8
-        for (var i = 4; i < 8; ++i) {
+        for (var i = 8; i > 4; i--) {
             var idx = i;
 
             yield return Anim.Animate(0.1f, t => {
-                image.color = Color.Lerp(Theme.Up[idx], Theme.Up[idx + 1], t);
+                image.color = Color.Lerp(Theme.Up[idx], Theme.Up[idx - 1], t);
             });
 
             yield return new WaitForSeconds(0.25f);
