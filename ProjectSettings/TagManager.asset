@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - BTD7Projectile
+  - BTD7Enemy
+  - BTD7PlacementBlocker
+  - BTD7Tower
   layers:
   - Default
   - TransparentFX
@@ -11,8 +15,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - BTD7Projectile
+  - BTD7Tower
   - 
   - 
   - 

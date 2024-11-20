@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: b682f9b0dffd0be4aa57724b5286a426
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - healthManager: {instanceID: 0}
+  - moneyManager: {instanceID: 0}
+  - waveManager: {instanceID: 0}
+  - enemy: {fileID: 7294189362684381154, guid: a4276a9052b49b643835578eab984f8e, type: 3}
+  - projectile: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
