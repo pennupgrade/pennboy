@@ -7,48 +7,27 @@ using UnityEngine.UI;
 
 public class HomePageManager : MonoBehaviour
 {
-    public GameObject repeatingbg;
-    public GameObject bgMask;
+    public GameObject repeatingBg;
     private (RectTransform rectTransform, Image image) bgAttrs;
 
-    public AnimationCurve bgTransitionCurve;    
-
-    public Transform targetTransitionTransform;
-
-    bool idk = false;
+    public Image transitionObj;
 
     private void Awake() {
-        bgAttrs = (repeatingbg.GetComponent<RectTransform>(), repeatingbg.GetComponent<Image>());
+        bgAttrs = (repeatingBg.GetComponent<RectTransform>(), repeatingBg.GetComponent<Image>());
     }
 
     private IEnumerator Start() {
-        bgAttrs.image.color = Theme.Up[10];
+        bgAttrs.image.color = Theme.Up[5];
 
-        yield return new WaitForSeconds(1f);
+        transitionObj.color = new Color(transitionObj.color.r, transitionObj.color.g, transitionObj.color.b, 1.0f);
 
-        float originalScale = bgMask.transform.localScale.x;
-        Vector3 originalPos = bgMask.transform.position;
+        yield return new WaitForSeconds(2f);
 
-        StartCoroutine(Anim.Animate(0.5f, t => {
-            float targetScale = targetTransitionTransform.localScale.x;
-            Vector3 targetPosition = targetTransitionTransform.position;
-            float curveT = bgTransitionCurve.Evaluate(t);
-
-            bgMask.transform.localScale = new Vector3(
-                targetScale * curveT + (1-curveT) * originalScale,
-                targetScale * curveT + (1-curveT) * originalScale,
-                targetScale * curveT + (1-curveT) * originalScale
-            );
-            bgMask.transform.position = curveT * targetTransitionTransform.position  + (1-curveT) * originalPos;
+        StartCoroutine(Anim.Animate(0.6f, t => {
+            transitionObj.color = new Color(transitionObj.color.r, transitionObj.color.g, transitionObj.color.b, 1-t);
         }));
 
-        idk = true;
+        
     }
 
-    private void Update() {
-        if (idk) {
-            bgMask.transform.position = targetTransitionTransform.position;
-            bgMask.transform.localScale = targetTransitionTransform.localScale;
-        }
-    }
 }

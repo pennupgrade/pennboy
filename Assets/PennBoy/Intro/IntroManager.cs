@@ -30,6 +30,8 @@ public class IntroManager : MonoBehaviour
     private List<(RectTransform rectTransform, CanvasGroup canvasGroup, Image image)> letterAttrs;
     private List<(RectTransform rectTransform, CanvasGroup canvasGroup)> textAttrs;
 
+    public Image transitionObj;
+
     private void Awake() {
 #if UNITY_EDITOR
         healthSafety.SetActive(true);
@@ -55,8 +57,8 @@ public class IntroManager : MonoBehaviour
         pressAnyKey.paused = true;
         bgAttrs.image.color = Color.black;
         textAttrs.ForEach((attrs) => attrs.canvasGroup.alpha = 0f);
-        logoAttrs.rectTransform.anchoredPosition = new Vector2(logoAttrs.rectTransform.anchoredPosition.x, -400);
-        logoAttrs.canvasGroup.alpha = 0f;
+        logoAttrs.rectTransform.anchoredPosition = new Vector2(logoAttrs.rectTransform.anchoredPosition.x, -600);
+        logoAttrs.canvasGroup.alpha = 1f;
 
         foreach (var (rectTrans, canvasGroup, image) in letterAttrs) {
             canvasGroup.alpha = 0f;
@@ -167,17 +169,10 @@ public class IntroManager : MonoBehaviour
                 Vector2.Lerp(initLogoPos, finalLogoPos, Easing.EaseOutExpo(t));
         }));
 
-        yield return Anim.Animate(0.5f, t => {
-            logoAttrs.canvasGroup.alpha = t;
-        });
+        yield return new WaitForSeconds(3.0f);
 
         yield return Anim.Animate(1f, t => {
-            float val = Math.Clamp(1-t, 0, 1);
-
-            letterAttrs.ForEach(letter => {
-                letter.canvasGroup.alpha = val;
-            });
-            logoAttrs.canvasGroup.alpha = val;
+            transitionObj.color = new Color(transitionObj.color.r, transitionObj.color.g, transitionObj.color.b, t);
         });
 
         StartCoroutine(LoadNextScene());
