@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/PennBoy/HomePage/HomePage.unity
     guid: e692064671f259f48a0a8c2bd2bbca7e
+  - enabled: 1
+    path: Assets/PennBoy/Games/Demo Game.unity
+    guid: 53e9cb590f0170d4f99b2f38c48a0151
   m_configObjects: {}

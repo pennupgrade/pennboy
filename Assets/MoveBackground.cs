@@ -2,31 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using PennBoy;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MoveBackground : MonoBehaviour
 {
     public float speed;
 
-    private RectTransform rectTransform;
-
-    private Vector3 initPos;
+    private RawImage rectTransform;
 
     private void Start() {
-        rectTransform = GetComponent<RectTransform>();
-        initPos = rectTransform.position;
-        
-        StartCoroutine(BackgroundAnim());
+        rectTransform = GetComponent<RawImage>();
     }
 
-    private IEnumerator BackgroundAnim() {
-        while(true) {
-            yield return StartCoroutine(Anim.Animate(8.0f, t => {
-                rectTransform.position += rectTransform.right * 0.1f * t;
-                // Debug.Log("Moving BG");
-            }));
-
-            rectTransform.position = initPos;
-        }
+    private void Update() {
+        rectTransform.uvRect = new Rect(rectTransform.uvRect.x + Time.deltaTime * 0.1f, rectTransform.uvRect.y, rectTransform.uvRect.width, rectTransform.uvRect.height);
     }
 
 

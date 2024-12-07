@@ -8,12 +8,12 @@ using UnityEngine.UI;
 public class HomePageManager : MonoBehaviour
 {
     public GameObject repeatingBg;
-    private (RectTransform rectTransform, Image image) bgAttrs;
+    private (RectTransform rectTransform, RawImage image) bgAttrs;
 
     public Image transitionObj;
 
     private void Awake() {
-        bgAttrs = (repeatingBg.GetComponent<RectTransform>(), repeatingBg.GetComponent<Image>());
+        bgAttrs = (repeatingBg.GetComponent<RectTransform>(), repeatingBg.GetComponent<RawImage>());
     }
 
     private IEnumerator Start() {
