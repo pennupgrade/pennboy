@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 4b925559d0ed941b9ba1003382a143dc
+=======
+guid: 4c5c9b6ab56a960428623fae306d70d0
+>>>>>>> game-merging
 timeCreated: 1484172856
 licenseType: Pro
 NativeFormatImporter:

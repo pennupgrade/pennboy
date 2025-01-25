@@ -3,15 +3,35 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - BTD7Projectile
+  - BTD7Enemy
+  - BTD7PlacementBlocker
+  - BTD7Tower
+  - Enemy
+  - GameManager
+  - Tree
+  - Ground
+  - PennSoccerGround
+  - PennSoccerPlayer
+  - PennSoccerGoalR
+  - PennSoccerGoalL
+  - PennSoccerUI
+  - PennSoccerBall
+  - PennSoccerSuperSize
+  - PennSoccerSuperSpeed
+  - PennSoccerSuperJump
+  - Bomb
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
+  - BTD7Projectile
+  - BTD7Tower
+  - Ground
   - 
   - 
   - 

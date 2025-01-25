@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/JumpJump/Textures/Ring.png.meta
 guid: 0aca0de61c5f84bb68f099f10e6a1cec
+========
+guid: 74bb3310909f54a23be88190c3a08cdc
+>>>>>>>> game-merging:Assets/group8/UI/Bomb Canvas/bomb canvas 1.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

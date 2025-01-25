@@ -51,6 +51,7 @@ ExportedObj/
 *.pidb.meta
 *.pdb.meta
 *.mdb.meta
+# *.meta
 
 # Unity3D generated file on crash reports
 sysinfo.txt
@@ -101,3 +102,10 @@ cmake-build-*/
 
 # Editor-based Rest Client
 .idea/httpRequests
+
+# mac specific
+.DS_Store
+
+# additinal lines
+Assets/group8/imported/Tree_Packs/
+Assets/group8/imported/Tree_Textures/

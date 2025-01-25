@@ -182,7 +182,7 @@ public class IntroManager : MonoBehaviour
     private IEnumerator LoadNextScene() {
         yield return new WaitForSeconds(1f);
 
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("HomePage"); // temp change
     }
 
 

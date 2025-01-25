@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/JumpJump/Textures/Background.png.meta
 guid: f81798d44e3f34bc3ba180eeb754fcb9
+========
+guid: ed6e0c3116e514659b06391d481ae45d
+>>>>>>>> game-merging:Assets/group8/UI/Bomb Canvas/bomb canvas 3.png.meta
 TextureImporter:
   fileIDToRecycleName: {}
   externalObjects: {}

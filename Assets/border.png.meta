@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/border.png.meta
 guid: 4d030283d287edd4e9c06ebb9c292cc2
+========
+guid: 7f2190e5a83b54842a33636e93972c7d
+>>>>>>>> game-merging:Assets/group8/UI/Bomb Canvas/bomb canvas 2.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

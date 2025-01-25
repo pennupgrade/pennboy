@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 8b530f5a527aa084ebcd1b0f03f12c2f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - TowerCard: {fileID: 5950164490969241002, guid: 44e003dfa97f40d45ac4d4b579b89d96,
+      type: 3}
+  - placementSystem: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

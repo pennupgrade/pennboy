@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7390591601816208003
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4802818650349675216}
+  - component: {fileID: 5679709640982731104}
+  m_Layer: 0
+  m_Name: Ambient Audio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4802818650349675216
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7390591601816208003}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5679709640982731104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7390591601816208003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 764012554e1b17a45916cd44315f22fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Music
+    audioClip: {fileID: 8300000, guid: 589a5d618eed4214d86a8bf6ff8d3efe, type: 3}
+    volume: 0.789
+    pitch: 1
+    isLooping: 1
+    playOnAwake: 1
+    audioSource: {fileID: 0}
+  - name: Wind
+    audioClip: {fileID: 8300000, guid: 1f05b686ef3d0b74ea1fb027da41ba07, type: 3}
+    volume: 0.147
+    pitch: 1
+    isLooping: 1
+    playOnAwake: 1
+    audioSource: {fileID: 0}
+  - name: Background
+    audioClip: {fileID: 8300000, guid: 98caff2b238df1a48b5a7f45d41b113a, type: 3}
+    volume: 0.354
+    pitch: 1
+    isLooping: 1
+    playOnAwake: 1
+    audioSource: {fileID: 0}

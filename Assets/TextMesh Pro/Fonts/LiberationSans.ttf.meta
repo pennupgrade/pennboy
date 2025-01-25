@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 6ab7dd9c1783e4729a41822ac5a8d025
+=======
+guid: c2b3e8878fd379a459fd338b6a87f925
+>>>>>>> game-merging
 timeCreated: 1484171297
 licenseType: Pro
 TrueTypeFontImporter:

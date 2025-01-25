@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/JumpJump.meta
 guid: f4491998d76e6492a801f4fe396eaf87
+========
+guid: 7a30fa29a87991040bfd492087ee03f3
+>>>>>>>> game-merging:Assets/DESCENT.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
