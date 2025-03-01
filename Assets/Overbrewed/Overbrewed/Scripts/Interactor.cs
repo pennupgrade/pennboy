@@ -11,6 +11,11 @@ public class Interactor : MonoBehaviour
     private readonly Collider[] _colliders = new Collider[3];
     [SerializeField] private int _numFound;
 
+
+
+
+
+
     // Update is called once per frame
     void Update()
     {
