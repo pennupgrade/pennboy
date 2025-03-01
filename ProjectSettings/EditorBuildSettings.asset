@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/PennBoy/Intro/Intro.unity
+    path: Assets/Overbrewed/Intro/Intro.unity
     guid: b2ca2af4986adcd4891de8bb3b19671b
   - enabled: 1
     path: Assets/Group 6/Scenes/MoveInMenu.unity
@@ -57,7 +57,7 @@ EditorBuildSettings:
     path: Assets/Group 6/Scenes/MoveInSettings.unity
     guid: 5e9b4e2fb25ac4d3f922b80785451459
   - enabled: 1
-    path: Assets/PennBoy/HomePage/HomePage.unity
+    path: Assets/Overbrewed/HomePage/HomePage.unity
     guid: e692064671f259f48a0a8c2bd2bbca7e
   - enabled: 1
     path: Assets/DESCENT/Scenes/Bryan 2.unity
