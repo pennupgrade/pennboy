@@ -1,0 +1,43 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class TimerScript : MonoBehaviour
+{
+    // Start is called before the first frame update
+    public float time = 120f;
+    public bool runningTime = false;
+    public string displayTime;
+    public float tempTime;
+
+    void Start()
+    {
+        runningTime = true;
+        tempTime = 0;
+        displayTime = "2:00";
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        tempTime += Time.deltaTime;
+
+        if (runningTime)
+        {
+            if (tempTime >= 1f)
+            {
+                time--;
+                displayTime = Mathf.Floor(time / 60).ToString() + ":" + (time % 60);
+                tempTime = 0f;
+            }
+        }
+        else
+        {
+            displayTime = "0:00";
+        }
+        Console.WriteLine(displayTime);
+    }
+
+}
