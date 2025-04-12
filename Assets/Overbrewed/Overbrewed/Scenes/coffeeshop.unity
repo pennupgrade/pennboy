@@ -287,7 +287,9 @@ PrefabInstance:
       value: Mug (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4224801822505238522, guid: 3f1367eba9f624c2e81c438f70a2dba8, type: 3}
+    - {fileID: -8684251187902555887, guid: 3f1367eba9f624c2e81c438f70a2dba8, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f1367eba9f624c2e81c438f70a2dba8, type: 3}
@@ -656,6 +658,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 255524982}
+    - targetCorrespondingSourceObject: {fileID: -927199367670048503, guid: ffbcc22e8b99a4fc7abdb681daab05db,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 255524985}
   m_SourcePrefab: {fileID: 100100000, guid: ffbcc22e8b99a4fc7abdb681daab05db, type: 3}
 --- !u!1 &255524981 stripped
 GameObject:
@@ -677,6 +683,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coffeePrefab: {fileID: 255524981}
   player: {fileID: 0}
+--- !u!65 &255524985
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255524981}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &285740192
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1257,6 +1284,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 451095049}
+    - targetCorrespondingSourceObject: {fileID: -927199367670048503, guid: ffbcc22e8b99a4fc7abdb681daab05db,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 451095052}
   m_SourcePrefab: {fileID: 100100000, guid: ffbcc22e8b99a4fc7abdb681daab05db, type: 3}
 --- !u!1 &451095048 stripped
 GameObject:
@@ -1278,6 +1309,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coffeePrefab: {fileID: 451095048}
   player: {fileID: 0}
+--- !u!65 &451095052
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451095048}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &535391686
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2792,6 +2844,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1283164216}
+    - targetCorrespondingSourceObject: {fileID: -927199367670048503, guid: ffbcc22e8b99a4fc7abdb681daab05db,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1283164219}
   m_SourcePrefab: {fileID: 100100000, guid: ffbcc22e8b99a4fc7abdb681daab05db, type: 3}
 --- !u!1 &1283164215 stripped
 GameObject:
@@ -2813,6 +2869,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coffeePrefab: {fileID: 1283164215}
   player: {fileID: 0}
+--- !u!65 &1283164219
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1283164215}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1379206427
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3563,7 +3640,9 @@ PrefabInstance:
       value: Mug (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4224801822505238522, guid: 3f1367eba9f624c2e81c438f70a2dba8, type: 3}
+    - {fileID: -8684251187902555887, guid: 3f1367eba9f624c2e81c438f70a2dba8, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f1367eba9f624c2e81c438f70a2dba8, type: 3}
