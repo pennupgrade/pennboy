@@ -6,11 +6,14 @@ public class CoffeeMachineScript : MonoBehaviour, IInteractable
 {
     public GameObject coffeePrefab; // Assign coffee prefab in Inspector
     public GameObject player;
+    //public Recipe[] recipes;
     private bool isBrewing = false;
     private bool isCoffeeReady = false;
 
     private void Start() {
         player = GameObject.FindWithTag("Player");
+        //Recipe RecipeLatte = new Recipe(new int[] {0, 2}, 3);
+        //recipes = new Recipe[] {RecipeLatte};
     } 
 
     public void Interact()
@@ -39,7 +42,7 @@ public class CoffeeMachineScript : MonoBehaviour, IInteractable
         isBrewing = true;
         Debug.Log("Brewing coffee...");
 
-        yield return new WaitForSeconds(10); // Simulate brewing time
+        yield return new WaitForSeconds(5); // Simulate brewing time
 
         isBrewing = false;
         isCoffeeReady = true;

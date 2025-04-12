@@ -23,6 +23,21 @@ public class PlayerItemHold : MonoBehaviour
         }
     }
 
+    public ItemScript GetItemHeld() {
+        if (heldItem != null)
+        {
+            ItemScript objectInfo = heldItem.GetComponent<ItemScript>();
+            if (objectInfo != null) {
+                return objectInfo;
+            }
+            else
+            {
+                Debug.LogWarning("Held item does not have an iteminfo component!");
+            }
+        }
+        return null;
+    }
+
     public void DropItem()
     {
         if (heldItem != null)
