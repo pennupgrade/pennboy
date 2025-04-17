@@ -38,5 +38,7 @@ public class CameraMovementScript : MonoBehaviour
         // Keep camera Y and Z stable while adjusting X position
         targetPosition = new Vector3(cameraPosition.x, desiredPosition.y, cameraPosition.z);
         transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * followSpeed);
+
+        transform.LookAt(player.position);
     }
 }
