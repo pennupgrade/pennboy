@@ -8,11 +8,13 @@ public class CoffeeMachineScript : MonoBehaviour
     public GameObject player;
     public Slider progressBar;
     private bool isBrewing = false;
-    //private bool isCoffeeReady = false;
+    private bool isCoffeeReady = false;
     private float brewingTime = 5f;
     private float brewingProgress = 0f;
     private bool isInRange = false;
     private bool isKeyHeld = false;
+
+    public MugScript mug;
 
     private void Start() {
         player = GameObject.FindWithTag("Player"); 
@@ -24,7 +26,8 @@ public class CoffeeMachineScript : MonoBehaviour
 
     private void Update()
     {
-        if (isInRange && !isBrewing) 
+        // player is in range & holding mug, coffee isn't already brewing
+        if (isInRange && !isBrewing && mug.mugHeld != null && !isCoffeeReady) 
         {
             if (Input.GetKey(KeyCode.B)) 
             {
@@ -64,8 +67,10 @@ public class CoffeeMachineScript : MonoBehaviour
             yield return null;
         }
 
+        isCoffeeReady = true;
         isBrewing = false;
         progressBar.gameObject.SetActive(false);
+        mug.ChangeMugColor(Color.red);
         Debug.Log("Coffee is ready! Pick it up.");
     }
 

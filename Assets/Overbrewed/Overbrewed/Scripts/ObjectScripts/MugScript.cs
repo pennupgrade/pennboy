@@ -6,6 +6,7 @@ public class MugScript : MonoBehaviour
 {
     GameObject player;
     bool playerIsClose = false;
+    public GameObject mugHeld = null;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,15 @@ public class MugScript : MonoBehaviour
             }
         }
         
+    }
+
+    public void ChangeMugColor(Color newColor)
+    {
+        Renderer mugRenderer = GetComponent<Renderer>();
+        if (mugRenderer != null)
+        {
+            mugRenderer.material.color = newColor;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -43,6 +53,7 @@ public class MugScript : MonoBehaviour
 
     void PickupMug()
     {
+        mugHeld = this.gameObject;
         this.transform.SetParent(player.transform);
     }
 }
