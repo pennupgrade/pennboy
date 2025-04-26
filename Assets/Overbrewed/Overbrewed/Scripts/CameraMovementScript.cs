@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraMovementScript : MonoBehaviour
 {
     public Transform player; // Assign the Player object
-    public Vector3 offset = new Vector3(0, 10, -12); // Camera offset (Height & Depth)
+    public Vector3 offset = new Vector3(0, 2, 5); // Camera offset (Height & Depth)
     public float followSpeed = 5f; // Smooth camera follow speed
     public float boundaryX = 5f; 
     public float boundaryZ = 2.5f; // How far the player moves before the camera follows

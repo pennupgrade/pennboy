@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Recipe : ScriptableObject
+[CreateAssetMenu(fileName = "NewRecipe", menuName = "Recipe")]
+public class RecipeScript : ScriptableObject
 {
     public int[] ingredients;
     public int result;
-    public Recipe(int[] ingred, int res) {
+    public RecipeScript(int[] ingred, int res) {
         ingredients = ingred;
         result = res;
     }

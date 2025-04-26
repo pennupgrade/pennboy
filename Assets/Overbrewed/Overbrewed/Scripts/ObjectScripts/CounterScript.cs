@@ -7,52 +7,46 @@ public class CounterScript : MonoBehaviour
 //IInteractable
 {
     public GameObject player;
-    private OrderScript orders;
+    //private OrderScript orders;
     public TextMeshProUGUI currOrder;
     public List<string> milkTypes;
     private int amt;
     private string type;
     public int score;
+    private OrderGenerationScript orders;
 
-    private void Start()
-    {
+    // private void Start()
+    // {
+    //     player = GameObject.FindWithTag("Player");
+    //     milkTypes = orders.milkType;
+    //     amt = (orders.GetCurrOrder())[0];
+    //     type = milkTypes[(orders.GetCurrOrder())[1]];
+    //     currOrder.text = "Current Order: \n Milk:" + type + "\n MilkAmt: " + amt;
+    // }
+
+
+    private void Start() {
         player = GameObject.FindWithTag("Player");
-        milkTypes = orders.milkType;
-        amt = (orders.GetCurrOrder())[0];
-        type = milkTypes[(orders.GetCurrOrder())[1]];
-        currOrder.text = "Current Order: \n Milk:" + type + "\n MilkAmt: " + amt;
+        orders = FindObjectOfType<OrderGenerationScript>();
     }
 
 
-
-    /*private void Start() {
-         player = GameObject.FindWithTag("Player");
-         order = FindObjectOfType<OrderScript>();
-     }
-
-     public void Update()
-     {
-
-     }
-     public void Interact() {
-         if (player != null)
-         {
-             PlayerItemHold holdItem = player.GetComponent<PlayerItemHold>();
-             if (holdItem != null)
-             {
-                 ItemScript item = holdItem.GetItemHeld();
-                 if (item != null) {
-                     if (item.IsServable) {
-                         return;
-                     }
-                 }
-             }
-         }
-     }
-
-     public void Serve() {
-         return;
-     }*/
+    public void Interact() {
+        if (player != null)
+        {
+            PlayerItemHold holdItem = player.GetComponent<PlayerItemHold>();
+            if (holdItem != null)
+            {
+                ItemScript item = holdItem.GetItemHeld();
+                if (item != null) {
+                    if (item.IsServable) {
+                        orders.ServeOrder(item.ItemID);
+                        holdItem.DropItem();
+                    }
+                }
+            }
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
