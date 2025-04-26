@@ -5860,6 +5860,7 @@ GameObject:
   - component: {fileID: 1561263747}
   - component: {fileID: 1561263749}
   - component: {fileID: 1561263748}
+  - component: {fileID: 1561263750}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -5984,6 +5985,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1561263746}
   m_CullTransparentMesh: 1
+--- !u!114 &1561263750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561263746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2236b612dd6f28b42a60dfb8922394c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerText: {fileID: 1561263748}
+  timeLeft: 120
+  gameEnd: 0
+  ball: {fileID: 0}
 --- !u!1001 &1604184385
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7410,6 +7427,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   milkType: []
+  milkAmt: 
+  milkTypeNum: 
+  currentServed: 
 --- !u!1 &2147351183
 GameObject:
   m_ObjectHideFlags: 0
