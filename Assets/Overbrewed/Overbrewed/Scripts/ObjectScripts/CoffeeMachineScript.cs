@@ -27,7 +27,7 @@ public class CoffeeMachineScript : MonoBehaviour
     private void Update()
     {
         // player is in range & holding mug, coffee isn't already brewing
-        if (isInRange && !isBrewing && mug.mugHeld != null && !isCoffeeReady) 
+        if (isInRange && !isBrewing && !isCoffeeReady) 
         {
             if (Input.GetKey(KeyCode.B)) 
             {
@@ -73,24 +73,6 @@ public class CoffeeMachineScript : MonoBehaviour
         mug.ChangeMugColor(Color.red);
         Debug.Log("Coffee is ready! Pick it up.");
     }
-
-
-    /*private void GiveCoffeeToPlayer()
-    {
-        if (player != null)
-        {
-            PlayerItemHold holdItem = player.GetComponent<PlayerItemHold>();
-            if (holdItem != null && holdItem.CanHoldItem())
-            {
-                isCoffeeReady = false;
-                Debug.Log("Player received coffee!");
-            }
-            else
-            {
-                Debug.Log("Player's hands are full!");
-            }
-        }
-    }*/
 
     private void OnTriggerEnter(Collider other)
     {

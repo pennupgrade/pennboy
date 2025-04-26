@@ -4,30 +4,43 @@ using UnityEngine;
 
 public class OrderScript : MonoBehaviour
 {
-    private List<int> orderable;
     public Queue<List<int>> Orders;
+    private List<string> milkType;
+    private List<int> milkAmt;
+    private List<int> milkTypeNum;
     private List<int> currentServed;
     // Start is called before the first frame update
     void Start()
     {
         Orders = new Queue<List<int>>();
-        orderable = new List<int>() {2, 3, 4};
+        milkAmt = new List<int>() {0, 1, 2, 3};
+        milkTypeNum = new List<int>() { 0, 1, 2 };
+        milkType = new List<string>() { "whole", "almond", "oat"}; 
         GenerateOrder();
     }
 
     private void GenerateOrder() {
-        
-        while(true) {
-            int order_size = Random.Range(1, 3);
+        for (int i = 0; i < 30; i++)
+        {
             List<int> order = new();
-            while(order.Count < order_size){
-                order.Add(GetRandomItemID());
-            }
+            order.Add(GetRandomItemID().Item1);
+            order.Add(GetRandomItemID().Item2);
             Orders.Enqueue(order);
         }
     }
-    public int GetRandomItemID() {
-        int randomIndex = Random.Range(0, orderable.Count);
-        return orderable[randomIndex];
+    public (int,int) GetRandomItemID() {
+        int randomIndex1 = Random.Range(0, milkAmt.Count);
+        int randomIndex2 = Random.Range(0, milkTypeNum.Count);
+        return (milkAmt[randomIndex1], milkTypeNum[randomIndex2]);
+    }
+
+    public string GetMilk(int index)
+    {
+        return milkType[index];
+    }
+
+    public Queue<List<int>> getOrders()
+    {
+        return Orders;
     }
 }

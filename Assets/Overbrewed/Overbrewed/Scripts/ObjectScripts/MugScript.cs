@@ -8,6 +8,7 @@ public class MugScript : MonoBehaviour
     bool playerIsClose = false;
     public GameObject mugHeld = null;
     bool holdingMug = false;
+    public Renderer mugRenderer;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,7 +36,6 @@ public class MugScript : MonoBehaviour
 
     public void ChangeMugColor(Color newColor)
     {
-        Renderer mugRenderer = GetComponent<Renderer>();
         if (mugRenderer != null)
         {
             mugRenderer.material.color = newColor;

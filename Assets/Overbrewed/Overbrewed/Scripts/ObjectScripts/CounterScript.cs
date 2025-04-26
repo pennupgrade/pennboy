@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CounterScript : MonoBehaviour, IInteractable
+public class CounterScript : MonoBehaviour
+//IInteractable
 {
     public GameObject player;
     private OrderScript order;
 
-    private void Start() {
+   /*private void Start() {
         player = GameObject.FindWithTag("Player");
         order = FindObjectOfType<OrderScript>();
     }
@@ -34,5 +35,13 @@ public class CounterScript : MonoBehaviour, IInteractable
 
     public void Serve() {
         return;
+    }*/
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Mug"))
+        {
+            Debug.Log("Mug placed on the counter!");
+        }
     }
 }
