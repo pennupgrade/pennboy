@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class MugScript : MonoBehaviour
 {
-    public List<string> contents;
+    public int[] contents = new int[] {0, 0}; // index 0 is amount of milk, index 1 is type of milk
+    // int 0 is whole milk, int 1 is almond milk, int 2 is oat milk
+    // amount of milk is 0 to 3
     GameObject player;
     bool playerIsClose = false;
     public GameObject mugHeld = null;
@@ -15,7 +17,6 @@ public class MugScript : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         Debug.Log("Player found: " + player); // this should not be null
-        contents = new List<string>();
 
     }
 
@@ -73,5 +74,27 @@ public class MugScript : MonoBehaviour
         mugHeld = null;
         this.transform.SetParent(null);
         holdingMug = false;
+    }
+
+    public void addOatToMug()
+    {
+        if (this != null && contents != null)
+        {
+            if (contents[1] != 2)
+            {
+                contents[1] = 2;
+                contents[0] = 1;
+                Debug.Log("milk amount: " + contents[0] + " and type of milk: " + contents[1]);
+            }
+            else
+            {
+                contents[0]++;
+            }
+        }
+        else
+        {
+            Debug.Log("not holding mug");
+        }
+
     }
 }
