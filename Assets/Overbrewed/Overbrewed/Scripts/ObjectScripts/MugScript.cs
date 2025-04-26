@@ -23,7 +23,7 @@ public class MugScript : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                if (holdingMug)
+                if (!holdingMug)
                 {
                     PickupMug();
                 }
