@@ -16,6 +16,7 @@ public class CounterScript : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindWithTag("Player");
+        orders = FindObjectOfType<OrderScript>();
         milkTypes = orders.milkType;
         amt = (orders.GetCurrOrder())[0];
         type = milkTypes[(orders.GetCurrOrder())[1]];
