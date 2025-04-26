@@ -13,11 +13,14 @@ public class MugScript : MonoBehaviour
     bool holdingMug = false;
     public Renderer mugRenderer;
     // Start is called before the first frame update
+    private Vector3 originalPosition;
+
     void Start()
     {
         contents = new List<int> { 0, 0 };
         player = GameObject.FindGameObjectWithTag("Player");
         Debug.Log("Player found: " + player); // this should not be null
+        originalPosition = this.transform.position;
 
     }
 
@@ -75,6 +78,7 @@ public class MugScript : MonoBehaviour
         mugHeld = null;
         this.transform.SetParent(null);
         holdingMug = false;
+        this.transform.position = originalPosition;
     }
 
     public void addOatToMug()
