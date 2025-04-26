@@ -7,6 +7,7 @@ public class MugScript : MonoBehaviour
     GameObject player;
     bool playerIsClose = false;
     public GameObject mugHeld = null;
+    bool holdingMug = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,16 +19,21 @@ public class MugScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(playerIsClose)
+        if (playerIsClose)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                Debug.Log("Pressed E to pick up");
-                PickupMug();
-                Debug.Log("playerIsClose is: " + playerIsClose);
+                if (holdingMug)
+                {
+                    PickupMug();
+                }
+                else
+                {
+                    PutDownMug();
+                }
+
             }
-        }
-        
+        } 
     }
 
     public void ChangeMugColor(Color newColor)
@@ -41,7 +47,7 @@ public class MugScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-       if(other.gameObject.tag == "Player")
+       if (other.gameObject.tag == "Player")
         {
             playerIsClose = true;
         }
@@ -60,5 +66,13 @@ public class MugScript : MonoBehaviour
         mugHeld = this.gameObject;
         this.transform.SetParent(player.transform);
         this.transform.localPosition = new Vector3((float)(transform.localPosition.x + 0.5), (float)(transform.localPosition.y + 1.5), (float)(transform.localPosition.z));
+        holdingMug = true;
+    }
+
+    void PutDownMug()
+    {
+        mugHeld = null;
+        this.transform.SetParent(null);
+        holdingMug = false;
     }
 }
