@@ -19,21 +19,18 @@ public class MugScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerIsClose)
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (!holdingMug && playerIsClose)
             {
-                if (!holdingMug)
-                {
-                    PickupMug();
-                }
-                else
-                {
-                    PutDownMug();
-                }
-
+                PickupMug();
             }
-        } 
+            else if (holdingMug) 
+            {
+                PutDownMug();
+            }
+
+        }
     }
 
     public void ChangeMugColor(Color newColor)
