@@ -10,8 +10,12 @@ public class CounterScript : MonoBehaviour, IInteractable
     private void Start() {
         player = GameObject.FindWithTag("Player");
         order = FindObjectOfType<OrderScript>();
-    } 
+    }
 
+    public void Update()
+    {
+        
+    }
     public void Interact() {
         if (player != null)
         {
