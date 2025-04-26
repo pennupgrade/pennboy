@@ -6324,8 +6324,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1195073892}
+  orders: {fileID: 2104354223}
   currOrder: {fileID: 902093381}
   milkTypes: []
+  score: 0
 --- !u!114 &2104354223
 MonoBehaviour:
   m_ObjectHideFlags: 0
