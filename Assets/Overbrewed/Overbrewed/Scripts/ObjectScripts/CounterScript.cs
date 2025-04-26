@@ -13,6 +13,7 @@ public class CounterScript : MonoBehaviour
     private int amt;
     private string type;
     public int score;
+    public TextMeshProUGUI scoreDisplay;
     private void Start()
     {
         orders = FindObjectOfType<OrderScript>();
@@ -25,6 +26,8 @@ public class CounterScript : MonoBehaviour
         amt = (orders.GetCurrOrder())[0];
         type = milkTypes[(orders.GetCurrOrder())[1]];
         currOrder.text = "Current Order: \n Milk:" + type + "\n MilkAmt: " + amt;
+        scoreDisplay.text = "Score: 0";
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -61,6 +64,14 @@ public class CounterScript : MonoBehaviour
 
     private void AssignPoints(bool isOrderCorrect)
     {
-
+        if (isOrderCorrect)
+        {
+            score += 10;
+        }
+        else
+        {
+            score += 2;
+        }
+        scoreDisplay.text = "Score: " + score.ToString();
     }
 }

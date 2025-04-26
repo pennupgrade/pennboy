@@ -34,6 +34,7 @@ public class TimerScript : MonoBehaviour
                 time--;
                 displayTime = Mathf.Floor(time / 60).ToString() + ":" + (time % 60);
                 tempTime = 0f;
+                timeDisplay.text = displayTime;
             }
         }
         else
