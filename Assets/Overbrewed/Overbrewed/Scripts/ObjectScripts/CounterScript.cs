@@ -14,7 +14,7 @@ public class CounterScript : MonoBehaviour
     private string type;
     public int score;
     public TextMeshProUGUI scoreDisplay;
-    private void Start()
+    private void Awake()
     {
         orders = FindObjectOfType<OrderScript>();
         player = GameObject.FindWithTag("Player");
