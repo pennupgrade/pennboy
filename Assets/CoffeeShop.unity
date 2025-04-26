@@ -357,7 +357,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 14
@@ -377,6 +377,27 @@ MonoBehaviour:
   contents: 
   mugHeld: {fileID: 0}
   mugRenderer: {fileID: 1423585085}
+--- !u!65 &50332884
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 50332877}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 194.71996, y: 210.38808, z: 195.43106}
+  m_Center: {x: -8.527599, y: 7.1709976, z: -3.8066227}
 --- !u!1 &94659279 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8391222552659086748, guid: f00e4adb9fbde49e79c77e4b3f1826c8,
@@ -6256,6 +6277,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1666000359}
+    - targetCorrespondingSourceObject: {fileID: -927199367670048503, guid: 3f1367eba9f624c2e81c438f70a2dba8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1666000362}
     - targetCorrespondingSourceObject: {fileID: -4425609515867240179, guid: 3f1367eba9f624c2e81c438f70a2dba8,
         type: 3}
       insertIndex: -1
@@ -6941,7 +6966,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 3f1367eba9f624c2e81c438f70a2dba8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.058
+      value: -0.653
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 3f1367eba9f624c2e81c438f70a2dba8,
         type: 3}
@@ -6981,7 +7006,7 @@ PrefabInstance:
     - target: {fileID: -2700194178795864487, guid: 3f1367eba9f624c2e81c438f70a2dba8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.381
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -2700194178795864487, guid: 3f1367eba9f624c2e81c438f70a2dba8,
         type: 3}
@@ -6991,7 +7016,7 @@ PrefabInstance:
     - target: {fileID: -2700194178795864487, guid: 3f1367eba9f624c2e81c438f70a2dba8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1094
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 3f1367eba9f624c2e81c438f70a2dba8,
         type: 3}
@@ -7017,6 +7042,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1901304240}
+    - targetCorrespondingSourceObject: {fileID: -927199367670048503, guid: 3f1367eba9f624c2e81c438f70a2dba8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1901304243}
     - targetCorrespondingSourceObject: {fileID: -4425609515867240179, guid: 3f1367eba9f624c2e81c438f70a2dba8,
         type: 3}
       insertIndex: -1
@@ -7143,7 +7172,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 14
@@ -7163,6 +7192,27 @@ MonoBehaviour:
   contents: 
   mugHeld: {fileID: 0}
   mugRenderer: {fileID: 845450407}
+--- !u!65 &1666000362
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1666000355}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 189.20178, y: 217.08118, z: 221.06885}
+  m_Center: {x: -10.143491, y: 3.4573767, z: -14.3012495}
 --- !u!1 &1669973417 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6498102189869104225, guid: 9aa8a7f0aa4134ae2bf1f6d1709937bc,
@@ -7302,6 +7352,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 50332881}
+    - targetCorrespondingSourceObject: {fileID: -927199367670048503, guid: 3f1367eba9f624c2e81c438f70a2dba8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 50332884}
     - targetCorrespondingSourceObject: {fileID: -4425609515867240179, guid: 3f1367eba9f624c2e81c438f70a2dba8,
         type: 3}
       insertIndex: -1
@@ -8083,7 +8137,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 14
@@ -8103,6 +8157,27 @@ MonoBehaviour:
   contents: 
   mugHeld: {fileID: 0}
   mugRenderer: {fileID: 1314610192}
+--- !u!65 &1901304243
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1901304236}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 214.64287, y: 205.56282, z: 245.01886}
+  m_Center: {x: -12.827823, y: -4.004445, z: -11.228184}
 --- !u!1 &1934505788
 GameObject:
   m_ObjectHideFlags: 0
@@ -8299,8 +8374,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.02, y: 0.019999996, z: 0.0049530044}
-  m_Center: {x: 0, y: -9.731148e-18, z: 0.002476504}
+  m_Size: {x: 0.02, y: 0.019999996, z: 0.007433257}
+  m_Center: {x: 0, y: -5.735816e-18, z: 0.003716637}
 --- !u!114 &2104354222
 MonoBehaviour:
   m_ObjectHideFlags: 0
