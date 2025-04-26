@@ -11,6 +11,8 @@ public class MugScript : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        Debug.Log("Player found: " + player); // this should not be null
+
     }
 
     // Update is called once per frame
@@ -20,7 +22,9 @@ public class MugScript : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
+                Debug.Log("Pressed E to pick up");
                 PickupMug();
+                Debug.Log("playerIsClose is: " + playerIsClose);
             }
         }
         
@@ -55,5 +59,6 @@ public class MugScript : MonoBehaviour
     {
         mugHeld = this.gameObject;
         this.transform.SetParent(player.transform);
+        this.transform.localPosition = new Vector3((float)(transform.localPosition.x + 0.5), (float)(transform.localPosition.y + 1.5), (float)(transform.localPosition.z));
     }
 }
