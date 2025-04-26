@@ -27,7 +27,7 @@ public class CoffeeMachineScript : MonoBehaviour
     private void Update()
     {
         // player is in range & holding mug, coffee isn't already brewing
-        if (isInRange && !isBrewing && mug.mugHeld != null && !isCoffeeReady) 
+        if (isInRange && !isBrewing && !isCoffeeReady) 
         {
             if (Input.GetKey(KeyCode.B)) 
             {
