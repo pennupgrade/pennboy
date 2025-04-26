@@ -1716,7 +1716,6 @@ GameObject:
   - component: {fileID: 428749413}
   - component: {fileID: 428749416}
   - component: {fileID: 428749415}
-  - component: {fileID: 428749414}
   m_Layer: 5
   m_Name: ScoreText
   m_TagString: Untagged
@@ -1743,24 +1742,6 @@ RectTransform:
   m_AnchoredPosition: {x: -270, y: 100}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &428749414
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 428749412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cb82fafe3e31a6408773b7e7f294895, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  orders: {fileID: 0}
-  currOrder: {fileID: 0}
-  milkTypes: []
-  score: 0
-  scoreDisplay: {fileID: 428749415}
 --- !u!114 &428749415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7670,7 +7651,7 @@ MonoBehaviour:
   currOrder: {fileID: 902093381}
   milkTypes: []
   score: 0
-  scoreDisplay: {fileID: 0}
+  scoreDisplay: {fileID: 428749415}
 --- !u!114 &2104354227
 MonoBehaviour:
   m_ObjectHideFlags: 0
