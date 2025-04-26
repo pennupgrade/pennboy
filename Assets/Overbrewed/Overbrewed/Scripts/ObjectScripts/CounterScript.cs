@@ -7,7 +7,7 @@ public class CounterScript : MonoBehaviour
 //IInteractable
 {
     public GameObject player;
-    //private OrderScript orders;
+    private OrderScript orders;
     public TextMeshProUGUI currOrder;
     public List<string> milkTypes;
     private int amt;
