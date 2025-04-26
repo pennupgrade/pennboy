@@ -74,24 +74,6 @@ public class CoffeeMachineScript : MonoBehaviour
         Debug.Log("Coffee is ready! Pick it up.");
     }
 
-
-    /*private void GiveCoffeeToPlayer()
-    {
-        if (player != null)
-        {
-            PlayerItemHold holdItem = player.GetComponent<PlayerItemHold>();
-            if (holdItem != null && holdItem.CanHoldItem())
-            {
-                isCoffeeReady = false;
-                Debug.Log("Player received coffee!");
-            }
-            else
-            {
-                Debug.Log("Player's hands are full!");
-            }
-        }
-    }*/
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
