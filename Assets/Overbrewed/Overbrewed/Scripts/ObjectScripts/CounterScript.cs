@@ -13,39 +13,18 @@ public class CounterScript : MonoBehaviour
     private int amt;
     private string type;
     public int score;
-    private OrderGenerationScript orders;
-
-    // private void Start()
-    // {
-    //     player = GameObject.FindWithTag("Player");
-    //     milkTypes = orders.milkType;
-    //     amt = (orders.GetCurrOrder())[0];
-    //     type = milkTypes[(orders.GetCurrOrder())[1]];
-    //     currOrder.text = "Current Order: \n Milk:" + type + "\n MilkAmt: " + amt;
-    // }
-
-
-    private void Start() {
+    private void Start()
+    {
+        orders = FindObjectOfType<OrderScript>();
         player = GameObject.FindWithTag("Player");
-        orders = FindObjectOfType<OrderGenerationScript>();
-    }
 
+        milkTypes = orders.milkType;
 
-    public void Interact() {
-        if (player != null)
-        {
-            PlayerItemHold holdItem = player.GetComponent<PlayerItemHold>();
-            if (holdItem != null)
-            {
-                ItemScript item = holdItem.GetItemHeld();
-                if (item != null) {
-                    if (item.IsServable) {
-                        orders.ServeOrder(item.ItemID);
-                        holdItem.DropItem();
-                    }
-                }
-            }
-        }
+        Debug.Log("Next Order: Amt = " + amt + ", Type Index = " + (orders.GetCurrOrder())[1]);
+
+        amt = (orders.GetCurrOrder())[0];
+        type = milkTypes[(orders.GetCurrOrder())[1]];
+        currOrder.text = "Current Order: \n Milk:" + type + "\n MilkAmt: " + amt;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -53,13 +32,17 @@ public class CounterScript : MonoBehaviour
         if (other.CompareTag("Mug"))
         {
             MugScript mug = other.gameObject.GetComponent<MugScript>();
-            List<int> contents = mug.contents; 
-            List<int> lastOrder = orders.GetCurrOrder(); // save completed order
+            List<int> contents = mug.contents;
+
+            List<int> lastOrder = orders.GetCurrOrder(); 
+
             AssignPoints(CheckOrder(lastOrder, contents));
-            orders.OntoNextOrder(); // dequeue completed order
-            amt = (orders.GetCurrOrder())[0]; // amt for next order
-            type = milkTypes[(orders.GetCurrOrder())[1]]; // type for next order
-            currOrder.text = currOrder.text = "Current Order: \n Milk:" + type + "\n MilkAmt: " + amt; // updated display
+
+            orders.OntoNextOrder(); 
+            amt = (orders.GetCurrOrder())[0]; 
+            type = milkTypes[(orders.GetCurrOrder())[1]]; 
+            currOrder.text = "Current Order: \n Milk:" + type + "\n MilkAmt: " + amt; 
+
             Debug.Log("Mug placed on the counter!");
         }
     }
