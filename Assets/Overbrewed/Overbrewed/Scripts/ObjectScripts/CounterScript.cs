@@ -25,8 +25,13 @@ public class CounterScript : MonoBehaviour
 
         amt = (orders.GetCurrOrder())[0];
         type = milkTypes[(orders.GetCurrOrder())[1]];
-        currOrder.text = "Current Order: \n Milk:" + type + "\n MilkAmt: " + amt;
+
+    }
+
+    private void Start()
+    {
         scoreDisplay.text = "Score: 0";
+        currOrder.text = "Current Order: \n Milk:" + type + "\n MilkAmt: " + amt;
 
     }
 
