@@ -27,6 +27,7 @@ public class OrderScript : MonoBehaviour
     }
 
     private void GenerateOrder() {
+        Debug.Log("triggered");
         for (int i = 0; i < 30; i++)
         {
             List<int> order = new();
