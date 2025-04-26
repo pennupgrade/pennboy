@@ -6,6 +6,7 @@ public class TableScript : MonoBehaviour, IInteractable
 {   
     public bool is_empty = true;
     public int currentItemID = -1;
+    private GameObject placedItem = null;
     public GameObject player;
 
     private void Start() {
@@ -17,7 +18,9 @@ public class TableScript : MonoBehaviour, IInteractable
         {
             PlayerItemHold holdItem = player.GetComponent<PlayerItemHold>();
             if (holdItem != null){
-                return;
+                if (placedItem != null) {
+                    
+                }
             }
         }
     }

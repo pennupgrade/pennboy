@@ -4,9 +4,10 @@ using UnityEngine;
 using TMPro; 
 
 public class CounterScript : MonoBehaviour
+//IInteractable
 {
     public GameObject player;
-    public OrderScript orders;
+    private OrderScript orders;
     public TextMeshProUGUI currOrder;
     public List<string> milkTypes;
     private int amt;
@@ -60,12 +61,6 @@ public class CounterScript : MonoBehaviour
 
     private void AssignPoints(bool isOrderCorrect)
     {
-        if (isOrderCorrect)
-        {
-            score += 10;
-        } else
-        {
-            score += 2;
-        }
+
     }
 }

@@ -1,19 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class OrderScript : MonoBehaviour
 {
-    [SerializeField]
-    public List<List<int>> orders;
+    public Queue<List<int>> orders;
     public List<string> milkType;
     private List<int> milkAmt;
     private List<int> milkTypeNum;
     private List<int> currentServed;
+    public ScoreScript score;
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
-        orders = new List<List<int>>();
+        orders = new Queue<List<int>>();
         milkAmt = new List<int>() {0, 1, 2, 3};
         milkTypeNum = new List<int>() { 0, 1, 2 };
         milkType = new List<string>() { "whole", "almond", "oat"}; 
@@ -27,7 +28,7 @@ public class OrderScript : MonoBehaviour
             List<int> order = new();
             order.Add(GetRandomItemID().Item1);
             order.Add(GetRandomItemID().Item2);
-            orders.Add(order);
+            orders.Enqueue(order);
         }
     }
     public (int,int) GetRandomItemID() {
@@ -38,19 +39,19 @@ public class OrderScript : MonoBehaviour
 
     public List<int> GetCurrOrder()
     {
-        return orders[0];
+        return orders.Peek();
     }
 
     public void OntoNextOrder()
     {
-        orders.RemoveAt(0);
+        orders.Dequeue();
     }
     public string GetMilk(int index)
     {
         return milkType[index];
     }
 
-    public List<List<int>> getOrders()
+    public Queue<List<int>> getOrders()
     {
         return orders;
     }
