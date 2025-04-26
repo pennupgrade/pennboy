@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class OrderScript : MonoBehaviour
 {
-    public Queue<List<int>> Orders;
-    private List<string> milkType;
+    public Queue<List<int>> orders;
+    public List<string> milkType;
     private List<int> milkAmt;
     private List<int> milkTypeNum;
     private List<int> currentServed;
     // Start is called before the first frame update
     void Start()
     {
-        Orders = new Queue<List<int>>();
+        orders = new Queue<List<int>>();
         milkAmt = new List<int>() {0, 1, 2, 3};
         milkTypeNum = new List<int>() { 0, 1, 2 };
         milkType = new List<string>() { "whole", "almond", "oat"}; 
@@ -25,7 +25,7 @@ public class OrderScript : MonoBehaviour
             List<int> order = new();
             order.Add(GetRandomItemID().Item1);
             order.Add(GetRandomItemID().Item2);
-            Orders.Enqueue(order);
+            orders.Enqueue(order);
         }
     }
     public (int,int) GetRandomItemID() {
@@ -34,6 +34,15 @@ public class OrderScript : MonoBehaviour
         return (milkAmt[randomIndex1], milkTypeNum[randomIndex2]);
     }
 
+    public List<int> GetCurrOrder()
+    {
+        return orders.Peek();
+    }
+
+    public void OntoNextOrder()
+    {
+        orders.Dequeue();
+    }
     public string GetMilk(int index)
     {
         return milkType[index];
@@ -41,6 +50,6 @@ public class OrderScript : MonoBehaviour
 
     public Queue<List<int>> getOrders()
     {
-        return Orders;
+        return orders;
     }
 }
