@@ -14,30 +14,30 @@ public class CameraMovementScript : MonoBehaviour
 
     void Update()
     {
-        if (player == null) return;
+        //if (player == null) return;
 
-        Vector3 desiredPosition = player.position + offset;
-        Vector3 cameraPosition = transform.position;
+        //Vector3 desiredPosition = player.position + offset;
+        //Vector3 cameraPosition = transform.position;
 
-        // Check if the player is outside the boundary before moving the camera
-        float distanceX = player.position.x - transform.position.x;
-        float distanceZ = player.position.z - transform.position.z - 12f;
+        //// Check if the player is outside the boundary before moving the camera
+        //float distanceX = player.position.x - transform.position.x;
+        //float distanceZ = player.position.z - transform.position.z - 12f;
 
-        if (Mathf.Abs(distanceX) > boundaryX)
-        {
-            float direction = Mathf.Sign(distanceX); // -1 (left) or 1 (right)
-            cameraPosition.x = Mathf.Lerp(cameraPosition.x, cameraPosition.x + direction * boundaryX, Time.deltaTime * followSpeed);
-        }
+        //if (Mathf.Abs(distanceX) > boundaryX)
+        //{
+        //    float direction = Mathf.Sign(distanceX); // -1 (left) or 1 (right)
+        //    cameraPosition.x = Mathf.Lerp(cameraPosition.x, cameraPosition.x + direction * boundaryX, Time.deltaTime * followSpeed);
+        //}
 
-        if (Mathf.Abs(distanceZ) > boundaryZ)
-        {
-            float direction = Mathf.Sign(distanceZ); // -1 (down) or 1 (up)
-            cameraPosition.z = Mathf.Lerp(cameraPosition.z, cameraPosition.z + direction * boundaryZ, Time.deltaTime * followSpeed);
-        }
+        //if (Mathf.Abs(distanceZ) > boundaryZ)
+        //{
+        //    float direction = Mathf.Sign(distanceZ); // -1 (down) or 1 (up)
+        //    cameraPosition.z = Mathf.Lerp(cameraPosition.z, cameraPosition.z + direction * boundaryZ, Time.deltaTime * followSpeed);
+        //}
 
-        // Keep camera Y and Z stable while adjusting X position
-        targetPosition = new Vector3(cameraPosition.x, desiredPosition.y, cameraPosition.z);
-        transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * followSpeed);
+        //// Keep camera Y and Z stable while adjusting X position
+        //targetPosition = new Vector3(cameraPosition.x, desiredPosition.y, cameraPosition.z);
+        //transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * followSpeed);
 
         transform.LookAt(player.position);
     }
