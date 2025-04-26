@@ -85,6 +85,12 @@ public class CounterScript : MonoBehaviour
 
     private void AssignPoints(bool isOrderCorrect)
     {
-
+        if (isOrderCorrect)
+        {
+            score += 10;
+        } else
+        {
+            score += 2;
+        }
     }
 }
