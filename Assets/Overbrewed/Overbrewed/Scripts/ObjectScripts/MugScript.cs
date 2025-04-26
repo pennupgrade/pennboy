@@ -100,4 +100,53 @@ public class MugScript : MonoBehaviour
         }
 
     }
+
+    public void addAlmondToMug()
+    {
+        Debug.Log(contents.Count);
+        if (this != null && contents != null)
+        {
+            if (contents[1] != 1)
+            {
+                Debug.Log("milk amount: " + contents[0] + " and type of milk: " + contents[1]);
+                contents[1] = 1;
+                contents[0] = 1;
+            }
+            else
+            {
+                Debug.Log("incremented amount");
+                contents[0]++;
+            }
+        }
+        else
+        {
+            Debug.Log("not holding mug");
+        }
+
+    }
+
+    public void addWholeToMug()
+    {
+        Debug.Log(contents.Count);
+        if (this != null && contents != null)
+        {
+            if (contents[1] != 0)
+            {
+                Debug.Log("milk amount: " + contents[0] + " and type of milk: " + contents[1]);
+                contents[1] = 0;
+                contents[0] = 1;
+            }
+            else
+            {
+                Debug.Log("incremented amount");
+                contents[0]++;
+            }
+        }
+        else
+        {
+            Debug.Log("not holding mug");
+        }
+
+    }
+
 }
