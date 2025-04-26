@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CoffeeMachineScript : MonoBehaviour, IInteractable
+public class CoffeeMachineScript : MonoBehaviour
 {
     public GameObject player;
     public Slider progressBar;
     private bool isBrewing = false;
-    private bool isCoffeeReady = false;
+    //private bool isCoffeeReady = false;
     private float brewingTime = 5f;
     private float brewingProgress = 0f;
     private bool isInRange = false;
     private bool isKeyHeld = false;
 
     private void Start() {
-        player = GameObject.FindWithTag("Player");
+        player = GameObject.FindWithTag("Player"); 
         if (progressBar != null)
         {
             progressBar.gameObject.SetActive(false);
@@ -24,9 +24,9 @@ public class CoffeeMachineScript : MonoBehaviour, IInteractable
 
     private void Update()
     {
-        if (isInRange && !isBrewing && !isCoffeeReady)
+        if (isInRange && !isBrewing) 
         {
-            if (Input.GetKey(KeyCode.B))
+            if (Input.GetKey(KeyCode.B)) 
             {
                 StartBrewing();
                 isKeyHeld = true;
@@ -65,14 +65,12 @@ public class CoffeeMachineScript : MonoBehaviour, IInteractable
         }
 
         isBrewing = false;
-        isCoffeeReady = true;
-        GiveCoffeeToPlayer();
         progressBar.gameObject.SetActive(false);
         Debug.Log("Coffee is ready! Pick it up.");
     }
 
 
-    private void GiveCoffeeToPlayer()
+    /*private void GiveCoffeeToPlayer()
     {
         if (player != null)
         {
@@ -87,7 +85,7 @@ public class CoffeeMachineScript : MonoBehaviour, IInteractable
                 Debug.Log("Player's hands are full!");
             }
         }
-    }
+    }*/
 
     private void OnTriggerEnter(Collider other)
     {
