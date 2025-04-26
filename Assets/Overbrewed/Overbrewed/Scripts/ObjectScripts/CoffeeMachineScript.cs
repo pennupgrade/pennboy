@@ -14,10 +14,10 @@ public class CoffeeMachineScript : MonoBehaviour
     private bool isInRange = false;
     private bool isKeyHeld = false;
 
-    public MugScript mug;
+    public MugScript currentMug = null;
 
     private void Start() {
-        player = GameObject.FindWithTag("Player"); 
+        player = GameObject.FindWithTag("Player");
         if (progressBar != null)
         {
             progressBar.gameObject.SetActive(false);
@@ -69,8 +69,8 @@ public class CoffeeMachineScript : MonoBehaviour
 
         isCoffeeReady = true;
         isBrewing = false;
+        currentMug.ChangeMugColor(Color.red);
         progressBar.gameObject.SetActive(false);
-        mug.ChangeMugColor(Color.red);
         Debug.Log("Coffee is ready! Pick it up.");
     }
 
@@ -80,6 +80,7 @@ public class CoffeeMachineScript : MonoBehaviour
         {
             isInRange = true;
         }
+        currentMug = player.GetComponentInChildren<MugScript>();
     }
 
     private void OnTriggerExit(Collider other)
