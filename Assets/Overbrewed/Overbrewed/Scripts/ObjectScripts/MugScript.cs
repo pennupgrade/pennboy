@@ -78,7 +78,7 @@ public class MugScript : MonoBehaviour
         mugHeld = null;
         this.transform.SetParent(null);
         holdingMug = false;
-        this.transform.position = originalPosition;
+        //this.transform.position = originalPosition;
     }
 
     public void addOatToMug()
