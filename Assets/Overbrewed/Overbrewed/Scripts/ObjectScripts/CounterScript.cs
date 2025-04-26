@@ -14,7 +14,7 @@ public class CounterScript : MonoBehaviour
     private string type;
     public int score;
     public TextMeshProUGUI scoreDisplay;
-    private void Awake()
+    private void Start()
     {
         orders = FindObjectOfType<OrderScript>();
         player = GameObject.FindWithTag("Player");
@@ -35,6 +35,7 @@ public class CounterScript : MonoBehaviour
         if (other.CompareTag("Mug"))
         {
             MugScript mug = other.gameObject.GetComponent<MugScript>();
+            mug.ChangeMugColor(Color.green);
             List<int> contents = mug.contents;
 
             List<int> lastOrder = orders.GetCurrOrder(); 
