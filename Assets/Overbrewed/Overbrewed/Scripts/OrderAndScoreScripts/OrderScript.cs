@@ -12,7 +12,7 @@ public class OrderScript : MonoBehaviour
     private List<int> currentServed;
     public ScoreScript score;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         orders = new Queue<List<int>>();
         milkAmt = new List<int>() {0, 1, 2, 3};
