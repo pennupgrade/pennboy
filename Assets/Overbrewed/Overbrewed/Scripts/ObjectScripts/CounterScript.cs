@@ -12,6 +12,7 @@ public class CounterScript : MonoBehaviour
     public List<string> milkTypes;
     private int amt;
     private string type;
+    public int score;
 
     private void Start()
     {
@@ -84,6 +85,6 @@ public class CounterScript : MonoBehaviour
 
     private void AssignPoints(bool isOrderCorrect)
     {
-        
+
     }
 }

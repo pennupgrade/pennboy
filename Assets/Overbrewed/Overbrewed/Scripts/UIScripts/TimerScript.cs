@@ -11,6 +11,7 @@ public class TimerScript : MonoBehaviour
     public bool runningTime = false;
     public string displayTime;
     public float tempTime;
+    public CounterScript counter;
 
     void Start()
     {
@@ -36,6 +37,7 @@ public class TimerScript : MonoBehaviour
         else
         {
             displayTime = "0:00";
+            Debug.Log(counter.score);
         }
         Console.WriteLine(displayTime);
     }
