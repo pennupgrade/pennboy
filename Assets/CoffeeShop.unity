@@ -3410,11 +3410,11 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -372391257249330453, guid: 9aa8a7f0aa4134ae2bf1f6d1709937bc,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2104354223}
+      addedObject: {fileID: 2104354222}
     - targetCorrespondingSourceObject: {fileID: -372391257249330453, guid: 9aa8a7f0aa4134ae2bf1f6d1709937bc,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2104354222}
+      addedObject: {fileID: 2104354227}
     - targetCorrespondingSourceObject: {fileID: -4409628582570440650, guid: 9aa8a7f0aa4134ae2bf1f6d1709937bc,
         type: 3}
       insertIndex: -1
@@ -7410,10 +7410,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1195073892}
+  orders: {fileID: 2104354227}
   currOrder: {fileID: 902093381}
   milkTypes: []
   score: 0
---- !u!114 &2104354223
+--- !u!114 &2104354227
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7422,9 +7423,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2104354214}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a4f43a839fcded4a998f4fee5e9ddb7, type: 3}
+  m_Script: {fileID: 11500000, guid: c82050db5d4f1a34daa8d4437de9d52f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  milkType: []
+  score: {fileID: 0}
 --- !u!1 &2147351183
 GameObject:
   m_ObjectHideFlags: 0
