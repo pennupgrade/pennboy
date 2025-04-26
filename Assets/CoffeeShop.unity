@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17276844, g: 0.21589245, b: 0.2978263, a: 1}
+  m_IndirectSpecularColor: {r: 0.17276815, g: 0.21589202, b: 0.29782596, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -320,6 +320,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 579576880}
+    - targetCorrespondingSourceObject: {fileID: -927199367670048503, guid: 3f1367eba9f624c2e81c438f70a2dba8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 579576883}
     - targetCorrespondingSourceObject: {fileID: -4425609515867240179, guid: 3f1367eba9f624c2e81c438f70a2dba8,
         type: 3}
       insertIndex: -1
@@ -1100,7 +1104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1195073892}
   progressBar: {fileID: 680192099}
-  mug: {fileID: 0}
+  currentMug: {fileID: 0}
 --- !u!65 &255524985
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2208,7 +2212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1195073892}
   progressBar: {fileID: 1995801475}
-  mug: {fileID: 0}
+  currentMug: {fileID: 0}
 --- !u!65 &451095052
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2702,7 +2706,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 14
@@ -2722,6 +2726,27 @@ MonoBehaviour:
   contents: 
   mugHeld: {fileID: 0}
   mugRenderer: {fileID: 1245024334}
+--- !u!65 &579576883
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579576876}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 188.13722, y: 214.17836, z: 250.98048}
+  m_Center: {x: -10.2317705, y: -18.326593, z: 3.335066}
 --- !u!1 &626811351
 GameObject:
   m_ObjectHideFlags: 0
@@ -5383,7 +5408,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1195073892}
   progressBar: {fileID: 101981301}
-  mug: {fileID: 0}
+  currentMug: {fileID: 0}
 --- !u!65 &1283164219
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8274,8 +8299,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.02, y: 0.019999996, z: 0.0027255074}
-  m_Center: {x: 0, y: 2.6339648e-18, z: 0.0013627538}
+  m_Size: {x: 0.02, y: 0.019999996, z: 0.0049530044}
+  m_Center: {x: 0, y: -9.731148e-18, z: 0.002476504}
 --- !u!114 &2104354222
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -14,7 +14,7 @@ public class CounterScript : MonoBehaviour
     private string type;
     public int score;
     public TextMeshProUGUI scoreDisplay;
-    private void Awake()
+    private void Start()
     {
         orders = FindObjectOfType<OrderScript>();
         player = GameObject.FindWithTag("Player");
@@ -26,10 +26,6 @@ public class CounterScript : MonoBehaviour
         amt = (orders.GetCurrOrder())[0];
         type = milkTypes[(orders.GetCurrOrder())[1]];
 
-    }
-
-    private void Start()
-    {
         scoreDisplay.text = "Score: 0";
         currOrder.text = "Current Order: \n Milk:" + type + "\n MilkAmt: " + amt;
 
@@ -39,6 +35,7 @@ public class CounterScript : MonoBehaviour
     {
         if (other.CompareTag("Mug"))
         {
+            Debug.Log("triggered");
             MugScript mug = other.gameObject.GetComponent<MugScript>();
             mug.ChangeMugColor(Color.green);
             List<int> contents = mug.contents;
@@ -70,6 +67,7 @@ public class CounterScript : MonoBehaviour
 
     private void AssignPoints(bool isOrderCorrect)
     {
+        Debug.Log("points assigned");
         if (isOrderCorrect)
         {
             score += 10;
