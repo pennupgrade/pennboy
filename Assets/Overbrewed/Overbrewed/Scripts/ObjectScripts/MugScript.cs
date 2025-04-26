@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MugScript : MonoBehaviour
 {
+    public List<string> contents;
     GameObject player;
     bool playerIsClose = false;
     public GameObject mugHeld = null;
@@ -14,6 +15,7 @@ public class MugScript : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         Debug.Log("Player found: " + player); // this should not be null
+        contents = new List<string>();
 
     }
 
