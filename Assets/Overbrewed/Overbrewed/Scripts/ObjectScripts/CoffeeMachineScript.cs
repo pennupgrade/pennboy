@@ -72,7 +72,6 @@ public class CoffeeMachineScript : MonoBehaviour
         progressBar.gameObject.SetActive(false);
         mug.ChangeMugColor(Color.red);
         Debug.Log("Coffee is ready! Pick it up.");
-        mug.contents.Add("coffee");
     }
 
     private void OnTriggerEnter(Collider other)
