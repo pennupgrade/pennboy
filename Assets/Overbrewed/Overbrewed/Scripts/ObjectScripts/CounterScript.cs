@@ -12,13 +12,15 @@ public class CounterScript : MonoBehaviour
     private int amt;
     private string type;
     public int score;
-
     private void Start()
     {
+        orders = FindObjectOfType<OrderScript>();
         player = GameObject.FindWithTag("Player");
-        //orders = FindObjectOfType<OrderScript>();
+
         milkTypes = orders.milkType;
+
         Debug.Log("Next Order: Amt = " + amt + ", Type Index = " + (orders.GetCurrOrder())[1]);
+
         amt = (orders.GetCurrOrder())[0];
         type = milkTypes[(orders.GetCurrOrder())[1]];
         currOrder.text = "Current Order: \n Milk:" + type + "\n MilkAmt: " + amt;
@@ -31,14 +33,14 @@ public class CounterScript : MonoBehaviour
             MugScript mug = other.gameObject.GetComponent<MugScript>();
             List<int> contents = mug.contents;
 
-            List<int> lastOrder = orders.GetCurrOrder(); // save completed order
+            List<int> lastOrder = orders.GetCurrOrder(); 
 
             AssignPoints(CheckOrder(lastOrder, contents));
 
-            orders.OntoNextOrder(); // dequeue completed order
-            amt = (orders.GetCurrOrder())[0]; // amt for next order
-            type = milkTypes[(orders.GetCurrOrder())[1]]; // type for next order
-            currOrder.text = "Current Order: \n Milk:" + type + "\n MilkAmt: " + amt; // updated display
+            orders.OntoNextOrder(); 
+            amt = (orders.GetCurrOrder())[0]; 
+            type = milkTypes[(orders.GetCurrOrder())[1]]; 
+            currOrder.text = "Current Order: \n Milk:" + type + "\n MilkAmt: " + amt; 
 
             Debug.Log("Mug placed on the counter!");
         }
